@@ -1,0 +1,113 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="About the Collective — SecOps-NG" description="Who we are, what we believe, and how the SecOps-NG collective works.">
+  <section class="page">
+    <div class="container narrow">
+      <span class="eyebrow">About the collective</span>
+      <h1>We are practitioners building the security commons Europe needs.</h1>
+
+      <h2>Who we are</h2>
+      <p>
+        SecOps-NG is a collective of security engineers, SREs, platform builders,
+        and policy-minded technologists — most of us based in the Netherlands and
+        across the EU. None of us showed up here to ship a product. We showed up
+        because we kept watching mid-size European companies — the ones that
+        actually make the continent's economy work — get squeezed between
+        regulators raising the floor and hyperscalers raising the rent.
+      </p>
+      <p>
+        So we started building together, in the open, and called it SecOps-NG.
+      </p>
+
+      <h2>What we believe</h2>
+      <p>
+        We believe digital sovereignty is a communal right, not a procurement
+        checkbox. A society that cannot defend its own networks, on its own
+        infrastructure, with tools it can read and audit, is a society that has
+        outsourced something essential.
+      </p>
+      <p>
+        We believe the answer is not nostalgia for on-prem and it is not blind
+        faith in foreign clouds. The answer is a commons: open frameworks,
+        durable workflows, sovereign infrastructure, and a community big enough
+        to maintain all three.
+      </p>
+      <p>
+        We believe <strong>NIS2</strong> — with its July 2026 enforcement
+        horizon — is an opportunity, not a burden. It is the moment Europe
+        decides whether compliance becomes another tax on the mid-market or the
+        forcing function for genuine, shared capability.
+      </p>
+
+      <h2>How we work</h2>
+      <p>
+        Our model is open-core, sovereign-by-default, community-first.
+      </p>
+      <ul>
+        <li>
+          <strong>Open-core.</strong> Playbooks, agents, reference architectures,
+          and operator manuals are published under permissive licenses. If you
+          can read code, you can read our defenses.
+        </li>
+        <li>
+          <strong>Sovereign by default.</strong> Reference deployments target
+          EU-operated clouds (Nebul and friends). Data residency and
+          jurisdictional clarity are architectural decisions, not legal
+          afterthoughts.
+        </li>
+        <li>
+          <strong>Durable by design.</strong> Critical workflows live in
+          Temporal.io — replayable, observable, resilient. Incident response
+          should not be a pile of cron jobs and prayers.
+        </li>
+        <li>
+          <strong>Community-first governance.</strong> Decisions happen in the
+          open on GitHub, in RFCs and governance flags. Anyone affected by a
+          change is welcome to weigh in on it.
+        </li>
+      </ul>
+
+      <h2>How to participate</h2>
+      <p>
+        There is no membership form and no gatekeeping. The doors look like
+        this:
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/secops-ng" rel="noopener" target="_blank">github.com/secops-ng</a>
+          — read the manuals, file issues, open PRs, comment on RFCs.
+        </li>
+        <li>
+          <a href="/blog">The blog</a> — once the printing press warms up, this
+          is where we publish field notes, postmortems, and design dispatches.
+        </li>
+        <li>
+          Bring your organization. If you run security at a mid-size EU company
+          and the NIS2 deadline is keeping you up at night, come help us shape
+          what we build — by using it, breaking it, and telling us where it
+          falls short.
+        </li>
+      </ul>
+
+      <p class="closer">
+        Federations beat monopolies. Let's build one worth joining.
+      </p>
+    </div>
+  </section>
+
+  <style>
+    .page { padding: 4rem 0 2rem; }
+    .narrow { max-width: 44rem; }
+    h2 { margin-top: 2.5rem; }
+    ul { padding-left: 1.25rem; }
+    li { margin-bottom: 0.6rem; }
+    .closer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      font-weight: 600;
+      color: var(--ink);
+    }
+  </style>
+</Base>

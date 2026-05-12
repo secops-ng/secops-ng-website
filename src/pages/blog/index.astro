@@ -1,0 +1,79 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+<Base title="Blog — SecOps-NG" description="Field notes, postmortems, and design dispatches from the SecOps-NG collective.">
+  <section class="page">
+    <div class="container narrow">
+      <span class="eyebrow">Field notes from the collective</span>
+      <h1>The Blog</h1>
+
+      {posts.length === 0 ? (
+        <div class="empty">
+          <p class="empty-headline">
+            No posts yet — but the printing press is warming up.
+          </p>
+          <p>
+            We are drafting the first dispatches now: design notes on durable
+            SecOps workflows, deployment recipes for sovereign clouds, and
+            field reports from organizations gearing up for the NIS2 deadline
+            in July 2026.
+          </p>
+          <p>
+            Want to read along — or write one yourself? The collective lives
+            in the open.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/secops-ng" rel="noopener" target="_blank">Follow on GitHub</a>
+            <a class="btn" href="/about">About the collective</a>
+          </div>
+        </div>
+      ) : (
+        <ul class="post-list">
+          {posts.map((post) => (
+            <li class="post-item">
+              <a href={`/blog/${post.slug}`}>
+                <h2>{post.data.title}</h2>
+                <p class="post-meta">
+                  <time datetime={post.data.pubDate.toISOString()}>
+                    {post.data.pubDate.toLocaleDateString('en-GB', {
+                      year: 'numeric', month: 'long', day: 'numeric',
+                    })}
+                  </time>
+                  {' · '}{post.data.author}
+                </p>
+                <p>{post.data.description}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+
+  <style>
+    .page { padding: 4rem 0 2rem; }
+    .narrow { max-width: 44rem; }
+    .empty {
+      margin-top: 1.5rem;
+      padding: 2rem;
+      background: var(--paper-soft);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .empty-headline {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .post-list { list-style: none; padding: 0; margin: 2rem 0 0; }
+    .post-item { padding: 1.25rem 0; border-bottom: 1px solid var(--rule); }
+    .post-item a { color: var(--ink); }
+    .post-item a:hover { text-decoration: none; color: var(--accent); }
+    .post-meta { font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-soft); }
+  </style>
+</Base>

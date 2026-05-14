@@ -5,8 +5,8 @@ export interface Props {
 }
 
 const {
-  title = 'SecOps-NG — Sovereign Security for the EU',
-  description = 'A collective building sovereign, durable, agentic security for mid-size European organizations.',
+  title = 'SecOps-NG — A Digital Commons for sovereign security operations',
+  description = 'A community-driven initiative building durable, auditable security workflows on European sovereign infrastructure.',
 } = Astro.props;
 ---
 <!doctype html>
@@ -27,8 +27,11 @@ const {
         </a>
         <nav class="site-nav" aria-label="Primary">
           <a href="/">Home</a>
+          <a href="/features">Features</a>
+          <a href="/deploy">Deploy</a>
+          <a href="/blog">Field notes</a>
+          <a href="/community">Community</a>
           <a href="/about">About</a>
-          <a href="/blog">Blog</a>
           <a href="https://github.com/secops-ng" rel="noopener" target="_blank">GitHub</a>
         </nav>
       </div>
@@ -41,7 +44,7 @@ const {
     <footer class="site-footer">
       <div class="container footer-inner">
         <p class="footer-tag">
-          Project SecOps-NG — a collective for sovereign EU security.
+          SecOps-NG — a Digital Commons for sovereign security operations.
         </p>
         <p class="footer-licenses">
           Content licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" target="_blank">CC BY-SA 4.0</a>.
@@ -113,7 +116,7 @@ const {
       .wordmark:hover { text-decoration: none; }
       .wordmark-mark { color: var(--accent); font-size: 1.4rem; line-height: 1; }
       .wordmark-accent { color: var(--accent); }
-      .site-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+      .site-nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
       .site-nav a {
         color: var(--ink-soft);
         font-weight: 500;

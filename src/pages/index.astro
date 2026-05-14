@@ -1,62 +1,63 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="SecOps-NG — Sovereign Security for the EU">
+<Base title="SecOps-NG — A Digital Commons for sovereign security operations">
   <section class="hero">
     <div class="container">
-      <span class="eyebrow">A digital-sovereignty collective</span>
-      <h1>Sovereign security, built in the open, for the Europe we want to keep.</h1>
+      <span class="eyebrow">A Digital Commons</span>
+      <h1>Sovereign security operations, built in the open.</h1>
       <p class="lede">
-        We are a collective of practitioners building durable, agentic security
-        operations on sovereign European infrastructure. Our work is aimed
-        squarely at the mid-size organizations who carry the continent's
-        economy — and who face the <strong>NIS2 deadline in July 2026</strong>
-        without the budgets of the Fortune 500 or the comfort of dependence on
-        foreign hyperscalers.
+        SecOps-NG is a community-driven initiative for European organisations
+        navigating the regulatory baseline. The work is a commons:
+        shared playbooks, durable workflows, and an open framework that anyone
+        can read, audit, fork, and improve.
       </p>
       <p class="lede">
-        This is not a product. It is a federation, a commons, and an invitation.
+        Not a vendor. Not a consultancy. A commons.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://github.com/secops-ng" rel="noopener" target="_blank">Contribute on GitHub</a>
-        <a class="btn" href="/about">Read the manifesto</a>
+        <a class="btn btn-primary" href="/features">Read the framework</a>
+        <a class="btn" href="https://github.com/secops-ng" rel="noopener" target="_blank">Find us on GitHub</a>
       </div>
     </div>
   </section>
 
   <section class="pillars">
     <div class="container">
-      <span class="eyebrow">Three pillars</span>
-      <h2>What the collective is building.</h2>
+      <span class="eyebrow">What the commons builds</span>
+      <h2>Three pillars of the work.</h2>
       <div class="pillar-grid">
         <article class="pillar">
           <div class="pillar-num">01</div>
-          <h3>Sovereign Infrastructure</h3>
+          <h3>Sovereign by design</h3>
           <p>
-            Security workloads run on EU-operated, EU-governed compute. We
-            build on <a href="https://nebul.com" rel="noopener" target="_blank">Nebul</a>
-            and other sovereign clouds so that data, telemetry, and response
-            stay inside European jurisdiction — by architecture, not by promise.
+            Reference deployments target European-resident, European-governed
+            infrastructure. Data residency and jurisdictional clarity are
+            architectural decisions, not legal afterthoughts. EU-hosted
+            services and EU-origin libraries are preferred throughout.
           </p>
         </article>
         <article class="pillar">
           <div class="pillar-num">02</div>
-          <h3>Durable Workflows</h3>
+          <h3>Durable workflows</h3>
           <p>
-            Incident response is too important to rely on best-effort scripts.
-            We orchestrate detection, triage, and remediation as
-            <a href="https://temporal.io" rel="noopener" target="_blank">Temporal.io</a>
-            workflows — replayable, auditable, and resilient to the chaos of
-            real-world breaches.
+            Security operations are composed as
+            <a href="https://langchain-ai.github.io/langgraph/" rel="noopener" target="_blank">LangGraph</a>
+            state machines with strict
+            <a href="https://docs.pydantic.dev" rel="noopener" target="_blank">Pydantic v2</a>
+            contracts at every boundary. LLM-facing reasoning lives in
+            <a href="https://dspy.ai" rel="noopener" target="_blank">DSPy</a>
+            modules — prompts as versioned code, reviewable and replayable.
           </p>
         </article>
         <article class="pillar">
           <div class="pillar-num">03</div>
-          <h3>Open Framework</h3>
+          <h3>Auditable in the open</h3>
           <p>
-            Agentic SecOps belongs in the commons. Our playbooks, agents, and
-            reference architectures are open-source so any community can read
-            them, audit them, fork them, and improve them. Sovereignty without
+            Every step in every workflow is plain Python you can read.
+            <a href="https://opentelemetry.io" rel="noopener" target="_blank">OpenTelemetry</a>
+            spans capture each node and tool call; an in-band audit trail
+            survives even when the collector is offline. Sovereignty without
             transparency is just a different cage.
           </p>
         </article>
@@ -66,17 +67,18 @@ import Base from '../layouts/Base.astro';
 
   <section class="join">
     <div class="container join-inner">
-      <span class="eyebrow">Join the collective</span>
-      <h2>Federations beat monopolies. Help us build one.</h2>
+      <span class="eyebrow">Join the commons</span>
+      <h2>The work happens in the open.</h2>
       <p>
-        We are looking for security engineers, SREs, policy folks, lawyers,
-        translators, designers, and anyone who believes Europe deserves
-        defenses it owns. The work is happening in the open — repositories,
-        issues, design discussions, and manuals are all on GitHub.
+        Security engineers, platform builders, policy practitioners,
+        translators, designers — anyone willing to help maintain a shared
+        scaffold for European operational readiness is welcome. There is no
+        membership form and no gatekeeping. Repositories, issues, and design
+        discussions all live on GitHub.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://github.com/secops-ng" rel="noopener" target="_blank">Join the conversation on GitHub</a>
-        <a class="btn" href="/blog">Read the manuals</a>
+        <a class="btn btn-primary" href="https://github.com/secops-ng" rel="noopener" target="_blank">Join on GitHub</a>
+        <a class="btn" href="/community">How participation works</a>
       </div>
     </div>
   </section>

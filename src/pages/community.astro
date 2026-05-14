@@ -1,0 +1,103 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Community — SecOps-NG" description="How participation in the SecOps-NG Digital Commons works.">
+  <section class="page">
+    <div class="container narrow">
+      <span class="eyebrow">Community</span>
+      <h1>How participation works.</h1>
+      <p class="lede">
+        The commons is workable because the practices around it are
+        explicit. Code of conduct, governance, and contribution norms
+        are public and reviewed in the open.
+      </p>
+
+      <h2>Code of conduct</h2>
+      <p>
+        Participation in any SecOps-NG space — repositories, issue
+        threads, RFCs, field notes — is governed by a community code of
+        conduct. The short version: be respectful, be honest about
+        uncertainty, assume good faith, and remember that the commons
+        belongs to the people who maintain it.
+      </p>
+      <p>
+        The full text lives alongside the framework on GitHub. Reports of
+        conduct concerns are handled by maintainers under the process
+        documented there.
+      </p>
+
+      <h2>Governance</h2>
+      <p>
+        Decisions that affect the framework, the public website, or the
+        compliance evidence commons happen in the open. Substantive
+        changes go through an RFC; smaller changes happen through pull
+        requests with maintainer review.
+      </p>
+      <p>
+        Two practices keep the commons forward-compatible with its
+        eventual public audience:
+      </p>
+      <ul>
+        <li>
+          <strong>Forward-public hygiene.</strong> Every commit, issue,
+          comment, and file in the framework and website repositories
+          already passes the public-release bar — community language, no
+          internal infrastructure detail, no credentials, no
+          secret-shaped strings.
+        </li>
+        <li>
+          <strong>Custodian review.</strong> Pull requests against the
+          will-be-public repositories are reviewed against the language
+          and sovereignty guardrails before merge.
+        </li>
+      </ul>
+
+      <h2>Contributing</h2>
+      <p>
+        Contributions of all sizes are welcome — typo fixes, doc
+        improvements, new cookbook workflows, compliance mappings, field
+        notes for the blog, translations.
+      </p>
+      <ul>
+        <li>Open an issue first for anything larger than a typo. One paragraph of intent is enough.</li>
+        <li>Fork or branch, keep changes scoped, and open a pull request against <code>main</code>.</li>
+        <li>Sign commits with DCO sign-off and use conventional-commit messages.</li>
+        <li>The contribution guides at the root of each repository are the source of truth.</li>
+      </ul>
+
+      <h2>What does not belong in the commons</h2>
+      <ul>
+        <li>Internal strategy, roadmaps, or commercial framing.</li>
+        <li>Named organisations as prospects, partners, or leads.</li>
+        <li>Credentials, internal hostnames, or anything secret-shaped.</li>
+        <li>Personal pronouns ("I", "me", "my") in external surfaces.</li>
+      </ul>
+      <p>
+        When in doubt, the content goes in a private repository rather
+        than the commons.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/secops-ng" rel="noopener" target="_blank">Open the commons on GitHub</a>
+        <a class="btn" href="/about">About the commons</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .page { padding: 4rem 0 2rem; }
+    .narrow { max-width: 44rem; }
+    .lede { font-size: 1.1rem; color: var(--ink-soft); max-width: 44rem; }
+    h2 { margin-top: 2.5rem; }
+    ul { padding-left: 1.25rem; }
+    li { margin-bottom: 0.6rem; }
+    code {
+      font-family: var(--font-mono);
+      background: var(--paper-soft);
+      padding: 0.05rem 0.3rem;
+      border-radius: 2px;
+      font-size: 0.95em;
+    }
+    .cta-row { margin-top: 2.5rem; }
+  </style>
+</Base>

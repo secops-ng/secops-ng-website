@@ -6,30 +6,30 @@ const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
-<Base title="Blog — SecOps-NG" description="Field notes, postmortems, and design dispatches from the SecOps-NG collective.">
+<Base title="Field notes — SecOps-NG" description="Field notes, postmortems, and design dispatches from the SecOps-NG Digital Commons.">
   <section class="page">
     <div class="container narrow">
-      <span class="eyebrow">Field notes from the collective</span>
-      <h1>The Blog</h1>
+      <span class="eyebrow">Field notes from the commons</span>
+      <h1>Field notes</h1>
 
       {posts.length === 0 ? (
         <div class="empty">
           <p class="empty-headline">
-            No posts yet — but the printing press is warming up.
+            No field notes yet — the press is warming up.
           </p>
           <p>
-            We are drafting the first dispatches now: design notes on durable
-            SecOps workflows, deployment recipes for sovereign clouds, and
-            field reports from organizations gearing up for the NIS2 deadline
-            in July 2026.
+            The first dispatches are in draft: design notes on durable
+            SecOps workflows, deployment walkthroughs for sovereign
+            infrastructure, and operator reports from the compliance
+            evidence commons.
           </p>
           <p>
-            Want to read along — or write one yourself? The collective lives
-            in the open.
+            You are welcome to read along, or to write one yourself. The
+            commons lives in the open.
           </p>
           <div class="cta-row">
             <a class="btn btn-primary" href="https://github.com/secops-ng" rel="noopener" target="_blank">Follow on GitHub</a>
-            <a class="btn" href="/about">About the collective</a>
+            <a class="btn" href="/about">About the commons</a>
           </div>
         </div>
       ) : (

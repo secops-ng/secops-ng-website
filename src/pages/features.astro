@@ -1,0 +1,130 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Features — SecOps-NG" description="The four properties the SecOps-NG framework is built around, and the layers that deliver them.">
+  <section class="page">
+    <div class="container narrow">
+      <span class="eyebrow">Framework features</span>
+      <h1>Four non-negotiable properties.</h1>
+      <p class="lede">
+        SecOps-NG is an opinionated, sovereignty-aware Python framework for
+        building agentic Security Operations workflows. It is designed around
+        four properties that are non-negotiable across every workflow in the
+        commons.
+      </p>
+
+      <div class="feature">
+        <h2>Auditability</h2>
+        <p>
+          Every step in every workflow is reviewable as plain code, and
+          every value crossing a boundary is a typed, validated artefact.
+          Workflow state, tool calls, and decision points all leave a
+          structured trail. This is what makes operational claims
+          inspectable rather than asserted.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h2>Determinism where it matters</h2>
+        <p>
+          Routing, policy, and state transitions are deterministic Python.
+          Only the explicitly LLM-facing reasoning steps are
+          non-deterministic, and those are isolated behind DSPy signatures
+          so their inputs, outputs, and prompts are themselves versioned
+          code. There is no hidden mutable state pulling the workflow
+          off-script.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h2>Sovereignty</h2>
+        <p>
+          No hidden calls to non-EU services. Inference endpoints are
+          pluggable; the default configuration assumes the operator will
+          pin the framework to an EU-resident language model. EU-hosted
+          services and EU-origin libraries are preferred throughout, and
+          alternatives are called out where they exist.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h2>Operability</h2>
+        <p>
+          The runtime cost of a SecOps-NG workflow is a Python process. No
+          external orchestrator cluster is required. Durability, when
+          required, is delegated to a pluggable checkpointer (SQLite or
+          Postgres) rather than to a separate orchestration stack.
+        </p>
+      </div>
+
+      <h2 class="layers-header">The stack at a glance</h2>
+      <p>
+        Four independently swappable layers; the defaults below are what
+        the cookbook workflows are built against.
+      </p>
+      <ul class="layer-list">
+        <li>
+          <strong>Orchestration —</strong>
+          <a href="https://langchain-ai.github.io/langgraph/" rel="noopener" target="_blank">LangGraph</a>
+          <code>StateGraph</code>: Python-native, low operational cost,
+          good ergonomics for branching reasoning.
+        </li>
+        <li>
+          <strong>Contracts —</strong>
+          <a href="https://docs.pydantic.dev" rel="noopener" target="_blank">Pydantic v2</a>
+          with <code>extra="forbid"</code> and <code>frozen=True</code>:
+          strict, immutable I/O contracts at every boundary.
+        </li>
+        <li>
+          <strong>LLM reasoning —</strong>
+          <a href="https://dspy.ai" rel="noopener" target="_blank">DSPy</a>
+          signatures and modules: prompts as versioned code,
+          diff-reviewable, testable with stubs.
+        </li>
+        <li>
+          <strong>Observability —</strong>
+          <a href="https://opentelemetry.io" rel="noopener" target="_blank">OpenTelemetry</a>
+          spans on every node and every tool call, exported to the
+          operator's collector.
+        </li>
+      </ul>
+
+      <h2>Regulatory alignment</h2>
+      <p>
+        The framework includes a <strong>compliance evidence commons</strong>
+        — human-authored control mappings and machine-emitted artefacts that
+        let operators in different jurisdictions speak the same language to
+        their auditors and to each other. Mappings currently cover NIS2
+        Articles 20–23 and GDPR data-flow templates. The mappings are
+        operator-to-operator guidance, not legal advice.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/deploy">Deploy a reference workflow</a>
+        <a class="btn" href="https://github.com/secops-ng" rel="noopener" target="_blank">Read the framework on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .page { padding: 4rem 0 2rem; }
+    .narrow { max-width: 44rem; }
+    .lede { font-size: 1.1rem; color: var(--ink-soft); max-width: 44rem; }
+    .feature {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .feature h2 { margin-top: 1rem; font-size: 1.4rem; }
+    .layers-header { margin-top: 2.5rem; }
+    .layer-list { padding-left: 1.25rem; }
+    .layer-list li { margin-bottom: 0.6rem; }
+    code {
+      font-family: var(--font-mono);
+      background: var(--paper-soft);
+      padding: 0.05rem 0.3rem;
+      border-radius: 2px;
+      font-size: 0.95em;
+    }
+    .cta-row { margin-top: 2.5rem; }
+  </style>
+</Base>

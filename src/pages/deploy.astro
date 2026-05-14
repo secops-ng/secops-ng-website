@@ -1,0 +1,119 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Deploy — SecOps-NG" description="How to run a SecOps-NG workflow against your own infrastructure.">
+  <section class="page">
+    <div class="container narrow">
+      <span class="eyebrow">Deployment</span>
+      <h1>Running a SecOps-NG workflow.</h1>
+      <p class="lede">
+        A SecOps-NG workflow is a Python process. There is no orchestrator
+        cluster to install, no SaaS dependency to subscribe to, and no
+        agent to host. The framework is designed to run wherever you can
+        run Python.
+      </p>
+
+      <h2>The sovereign default</h2>
+      <p>
+        Reference deployments target European-resident, European-governed
+        infrastructure: EU-operated compute, EU-resident object storage,
+        and an EU-resident language model pinned through
+        <code>secops_ng.config</code>. The framework's default
+        configuration does not reach for non-EU endpoints. If you swap a
+        layer for a non-EU provider, that decision is visible in
+        configuration, not hidden in a SDK.
+      </p>
+
+      <h2>Shape of a deployment</h2>
+      <ul>
+        <li>
+          <strong>The framework</strong> — installed as a Python package
+          from the open repository on GitHub.
+        </li>
+        <li>
+          <strong>Your workflow</strong> — composed from primitives in
+          <code>secops_ng</code> and runnable cookbook templates under
+          <code>workflows/</code>.
+        </li>
+        <li>
+          <strong>An inference endpoint</strong> — pinned via
+          <code>configure_default_lm</code> to an EU-resident language
+          model of your choice.
+        </li>
+        <li>
+          <strong>An OpenTelemetry collector</strong> — receives spans
+          from every node and tool call. The framework does not bundle a
+          vendor.
+        </li>
+        <li>
+          <strong>A checkpointer</strong> (optional) — SQLite for a single
+          process, Postgres for a multi-process operator. State survives
+          restarts when checkpointing is enabled.
+        </li>
+      </ul>
+
+      <h2>A first run</h2>
+      <p>
+        The cookbook in <code>workflows/</code> includes a runnable
+        vulnerability-triage template: a LangGraph state machine that
+        classifies a single finding through a DSPy reasoning step and
+        emits a typed recommendation. It is self-contained, heavily
+        commented, and safe by default — no destructive actions without
+        explicit confirmation.
+      </p>
+      <p>
+        Cloning the repository and running the template against a small
+        synthetic finding is the fastest path to seeing every layer of
+        the framework in motion.
+      </p>
+
+      <h2>Operational readiness, not vendor lock-in</h2>
+      <p>
+        The four layers — orchestration, contracts, LLM reasoning,
+        observability — are independently swappable. The default
+        combination is what the commons supports and writes documentation
+        against, but operators are free to substitute a layer if a
+        sovereign or community-maintained alternative fits better.
+      </p>
+
+      <div class="callout">
+        <p>
+          A dedicated <em>sovereign quickstart</em> guide — the shortest
+          path from a clean machine to a running reference workflow on
+          European infrastructure — is in progress. Until it lands, the
+          framework <code>README</code> on GitHub is the starting point.
+        </p>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/secops-ng" rel="noopener" target="_blank">Open the framework on GitHub</a>
+        <a class="btn" href="/features">Back to features</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .page { padding: 4rem 0 2rem; }
+    .narrow { max-width: 44rem; }
+    .lede { font-size: 1.1rem; color: var(--ink-soft); max-width: 44rem; }
+    h2 { margin-top: 2.5rem; }
+    ul { padding-left: 1.25rem; }
+    li { margin-bottom: 0.6rem; }
+    code {
+      font-family: var(--font-mono);
+      background: var(--paper-soft);
+      padding: 0.05rem 0.3rem;
+      border-radius: 2px;
+      font-size: 0.95em;
+    }
+    .callout {
+      margin-top: 2rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--paper-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 2px;
+    }
+    .callout p { margin: 0; color: var(--ink-soft); }
+    .cta-row { margin-top: 2.5rem; }
+  </style>
+</Base>

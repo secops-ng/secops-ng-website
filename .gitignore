@@ -5,6 +5,10 @@ dist/
 # Dependencies
 node_modules/
 
+# pnpm is the supported package manager; other lockfiles are not tracked.
+package-lock.json
+yarn.lock
+
 # Environment
 .env
 .env.production

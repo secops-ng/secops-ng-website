@@ -1,13 +1,11 @@
 import { defineConfig } from 'astro/config';
 
 // Project SecOps-NG public website.
-// Deployment target: GitHub Pages (placeholder URL — flip when the org page
-// or custom domain is finalized).
-//
-// Governance note: CI provider for the deploy pipeline is still an open
-// flag (see README) — Actions config intentionally omitted for now.
+// Deployment target: GitHub Pages with custom domain (secops-ng.com).
+// The CNAME is set via public/CNAME and the .github/workflows/deploy-pages.yml
+// workflow uploads ./dist as the Pages artifact.
 export default defineConfig({
-  site: 'https://secops-ng.github.io',
+  site: 'https://secops-ng.com',
   base: '/',
   trailingSlash: 'ignore',
 });

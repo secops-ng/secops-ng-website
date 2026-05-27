@@ -1,107 +1,124 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Features — SecOps-NG" description="The four properties the SecOps-NG framework is built around, and the layers that deliver them.">
+<Base title="Features — SecOps-NG" description="The five content pillars of the SecOps-NG commons, layered above open standards and compiled into the operator's chosen orchestrator.">
   <section class="page">
     <div class="container narrow">
-      <span class="eyebrow">Framework features</span>
-      <h1>Four non-negotiable properties.</h1>
+      <span class="eyebrow">The content layer</span>
+      <h1>Five content pillars, above the standards.</h1>
       <p class="lede">
-        SecOps-NG is an opinionated, sovereignty-aware Python framework for
-        building agentic Security Operations workflows. It is designed around
-        four properties that are non-negotiable across every workflow in the
-        commons.
+        SecOps-NG is a portable content layer. It does not replace the
+        formats the industry has already settled on — it curates and maps
+        them, fills the gaps, and ships an open metrics catalogue alongside.
+        Each pillar below is portable on its own and coherent with the
+        others.
       </p>
 
       <div class="feature">
-        <h2>Auditability</h2>
+        <h2>Playbooks — CACAO</h2>
         <p>
-          Every step in every workflow is reviewable as plain code, and
-          every value crossing a boundary is a typed, validated artefact.
-          Workflow state, tool calls, and decision points all leave a
-          structured trail. This is what makes operational claims
-          inspectable rather than asserted.
+          Response playbooks are authored against
+          <a href="https://www.oasis-open.org/committees/cacao/" rel="noopener" target="_blank">CACAO</a>,
+          the OASIS standard for portable, machine-readable response
+          procedures. The commons contributes the curated library and the
+          mappings between playbooks, controls, and detections.
         </p>
       </div>
 
       <div class="feature">
-        <h2>Determinism where it matters</h2>
+        <h2>Detections — Sigma references</h2>
         <p>
-          Routing, policy, and state transitions are deterministic Python.
-          Only the explicitly LLM-facing reasoning steps are
-          non-deterministic, and those are isolated behind DSPy signatures
-          so their inputs, outputs, and prompts are themselves versioned
-          code. There is no hidden mutable state pulling the workflow
-          off-script.
+          Detection content references the
+          <a href="https://sigmahq.io" rel="noopener" target="_blank">Sigma</a>
+          rule corpus rather than re-inventing it. The commons curates a
+          working set, annotates it with the controls and playbooks it
+          supports, and tracks coverage gaps. Sigma is detection-only;
+          response lives in CACAO.
         </p>
       </div>
 
       <div class="feature">
-        <h2>Sovereignty</h2>
+        <h2>Controls — OSCAL and D3FEND</h2>
         <p>
-          No hidden calls to non-EU services. Inference endpoints are
-          pluggable; the default configuration assumes the operator will
-          pin the framework to an EU-resident language model. EU-hosted
-          services and EU-origin libraries are preferred throughout, and
-          alternatives are called out where they exist.
+          Control content is expressed against
+          <a href="https://pages.nist.gov/OSCAL/" rel="noopener" target="_blank">OSCAL</a>
+          for catalogue and profile structure, and
+          <a href="https://d3fend.mitre.org" rel="noopener" target="_blank">D3FEND</a>
+          for the defensive techniques those controls implement. Mappings
+          to the European regulatory baseline live alongside, as
+          operator-to-operator guidance rather than legal advice.
         </p>
       </div>
 
       <div class="feature">
-        <h2>Operability</h2>
+        <h2>Data shape — OCSF</h2>
         <p>
-          The runtime cost of a SecOps-NG workflow is a Python process. No
-          external orchestrator cluster is required. Durability, when
-          required, is delegated to a pluggable checkpointer (SQLite or
-          Postgres) rather than to a separate orchestration stack.
+          The shape of data crossing boundaries — events, findings, alerts —
+          is expressed in the
+          <a href="https://schema.ocsf.io" rel="noopener" target="_blank">Open Cybersecurity Schema Framework</a>.
+          Playbooks consume OCSF; detections emit it; controls are evidenced
+          against it. One shape across the stack means content stays
+          portable as the orchestrator underneath changes.
         </p>
       </div>
 
-      <h2 class="layers-header">The stack at a glance</h2>
+      <div class="feature">
+        <h2>Metrics catalogue</h2>
+        <p>
+          The gap none of the standards above fills: a shared, versioned
+          catalogue of operational metrics — mean time to triage, coverage
+          of a control set, detection precision against a baseline. The
+          commons publishes the catalogue, the definitions, and reference
+          queries against OCSF-shaped data.
+        </p>
+      </div>
+
+      <h2 class="layers-header">Cross-cutting commitments</h2>
       <p>
-        Four independently swappable layers; the defaults below are what
-        the cookbook workflows are built against.
+        Two properties hold across every pillar, not as features but as
+        the conditions under which the commons accepts content at all.
       </p>
       <ul class="layer-list">
         <li>
-          <strong>Orchestration —</strong>
-          <a href="https://langchain-ai.github.io/langgraph/" rel="noopener" target="_blank">LangGraph</a>
-          <code>StateGraph</code>: Python-native, low operational cost,
-          good ergonomics for branching reasoning.
+          <strong>Auditability —</strong> every artefact in the commons is
+          plain text, diff-reviewable, and versioned in the open. Curation
+          decisions live in pull requests, not in private threads.
         </li>
         <li>
-          <strong>Contracts —</strong>
-          <a href="https://docs.pydantic.dev" rel="noopener" target="_blank">Pydantic v2</a>
-          with <code>extra="forbid"</code> and <code>frozen=True</code>:
-          strict, immutable I/O contracts at every boundary.
-        </li>
-        <li>
-          <strong>LLM reasoning —</strong>
-          <a href="https://dspy.ai" rel="noopener" target="_blank">DSPy</a>
-          signatures and modules: prompts as versioned code,
-          diff-reviewable, testable with stubs.
-        </li>
-        <li>
-          <strong>Observability —</strong>
-          <a href="https://opentelemetry.io" rel="noopener" target="_blank">OpenTelemetry</a>
-          spans on every node and every tool call, exported to the
-          operator's collector.
+          <strong>Sovereignty —</strong> reference deployments target
+          European-resident, European-governed infrastructure. AI providers
+          are pluggable; nothing in the content layer pins the operator to
+          a non-EU service.
         </li>
       </ul>
 
+      <h2>Compile targets</h2>
+      <p>
+        Content is portable because it compiles. Three launch targets are
+        maintained by the commons:
+      </p>
+      <ul class="layer-list">
+        <li><strong><a href="https://n8n.io" rel="noopener" target="_blank">n8n</a></strong> — visual, self-hosted automation.</li>
+        <li><strong><a href="https://temporal.io" rel="noopener" target="_blank">Temporal</a></strong> — durable, restartable workflows.</li>
+        <li><strong><a href="https://langchain-ai.github.io/langgraph/" rel="noopener" target="_blank">LangGraph</a></strong> — graph-shaped agentic flows.</li>
+      </ul>
+      <p>
+        Community-contributed adapters are welcome for MindStudio, Make,
+        Zapier, StackAI, CrewAI, and anything else operators run. The
+        commons does not ship its own runtime.
+      </p>
+
       <h2>Regulatory alignment</h2>
       <p>
-        The framework includes a <strong>compliance evidence commons</strong>
-        — human-authored control mappings and machine-emitted artefacts that
-        let operators in different jurisdictions speak the same language to
-        their auditors and to each other. Mappings currently cover NIS2
-        Articles 20–23 and GDPR data-flow templates. The mappings are
-        operator-to-operator guidance, not legal advice.
+        The control pillar carries mappings to the European regulatory
+        baseline — NIS2, DORA, CRA — alongside the OSCAL catalogues. The
+        mappings are operator-to-operator guidance, not legal advice, and
+        live as ordinary content in the repository.
       </p>
 
       <div class="cta-row">
-        <a class="btn btn-primary" href="/deploy">Deploy a reference workflow</a>
-        <a class="btn" href="https://github.com/secops-ng" rel="noopener" target="_blank">Read the framework on GitHub</a>
+        <a class="btn btn-primary" href="/deploy">Pick your compile target</a>
+        <a class="btn" href="https://github.com/secops-ng" rel="noopener" target="_blank">Read the content layer on GitHub</a>
       </div>
     </div>
   </section>

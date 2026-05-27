@@ -10,11 +10,12 @@ import Base from '../layouts/Base.astro';
       <h2>What this is</h2>
       <p>
         SecOps-NG is a community-driven initiative — a Digital Commons —
-        building durable, auditable security workflows on European sovereign
+        curating portable security content for European sovereign
         infrastructure. It is not a vendor and not a consultancy. The output
-        is community infrastructure: shared playbooks, reference workflows,
-        and a Python framework that anyone in the commons can read, audit,
-        fork, and improve.
+        is community infrastructure: shared playbooks (CACAO), detection
+        references (Sigma), controls (OSCAL and D3FEND), an OCSF-shaped data
+        spine, and an open metrics catalogue — all of which anyone in the
+        commons can read, audit, fork, and improve.
       </p>
 
       <h2>What the commons believes</h2>
@@ -37,21 +38,22 @@ import Base from '../layouts/Base.astro';
       <h2>How the commons works</h2>
       <ul>
         <li>
-          <strong>Open by default.</strong> The framework, the playbooks,
-          and the reference deployments are published under permissive
-          licenses. If you can read code, you can read the defences the
-          commons relies on.
+          <strong>Open by default.</strong> The content layer, the
+          playbooks, and the reference compile targets are published under
+          permissive licenses. If you can read text, you can read the
+          defences the commons relies on.
         </li>
         <li>
           <strong>Sovereign by architecture.</strong> Reference deployments
-          target European-resident, European-governed infrastructure. There
-          are no hidden calls to non-EU services in the framework defaults.
+          target European-resident, European-governed infrastructure. No
+          choice of AI provider or runtime is hard-wired into the content.
         </li>
         <li>
-          <strong>Durable by design.</strong> Critical workflows are
-          composed as LangGraph state machines with strict Pydantic v2
-          contracts at every boundary. State transitions are explicit,
-          replay-friendly, and reviewable as plain code.
+          <strong>Portable by design.</strong> Content is authored against
+          open standards — CACAO, Sigma, OSCAL, D3FEND, OCSF — and compiled
+          into the orchestrator each operator already runs. The commons
+          adds the curation, mappings, and metrics that the standards on
+          their own do not supply.
         </li>
         <li>
           <strong>Community-first governance.</strong> Decisions happen in

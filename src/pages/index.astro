@@ -5,18 +5,20 @@ import Base from '../layouts/Base.astro';
   <section class="hero">
     <div class="container">
       <span class="eyebrow">A Digital Commons</span>
-      <h1>Sovereign security operations, built in the open.</h1>
+      <h1>Portable security content, above the standards you already trust.</h1>
       <p class="lede">
         SecOps-NG is a community-driven initiative for European organisations
-        navigating the regulatory baseline. The work is a commons:
-        shared playbooks, durable workflows, and an open framework that anyone
-        can read, audit, fork, and improve.
+        navigating the regulatory baseline. The commons curates portable
+        security content — playbooks, detections, controls, data shapes, and
+        metrics — that sits on top of the open standards the wider industry
+        is already converging on, and compiles into the orchestrator each
+        operator already runs.
       </p>
       <p class="lede">
         Not a vendor. Not a consultancy. A commons.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="/features">Read the framework</a>
+        <a class="btn btn-primary" href="/features">Read the content layer</a>
         <a class="btn" href="https://github.com/secops-ng" rel="noopener" target="_blank">Find us on GitHub</a>
       </div>
     </div>
@@ -29,36 +31,47 @@ import Base from '../layouts/Base.astro';
       <div class="pillar-grid">
         <article class="pillar">
           <div class="pillar-num">01</div>
-          <h3>Sovereign by design</h3>
+          <h3>Portable content above open standards</h3>
           <p>
-            Reference deployments target European-resident, European-governed
-            infrastructure. Data residency and jurisdictional clarity are
-            architectural decisions, not legal afterthoughts. EU-hosted
-            services and EU-origin libraries are preferred throughout.
+            We do not invent a new format. The commons curates content on
+            top of standards that already exist:
+            <a href="https://www.oasis-open.org/committees/cacao/" rel="noopener" target="_blank">CACAO</a>
+            for response playbooks,
+            <a href="https://sigmahq.io" rel="noopener" target="_blank">Sigma</a>
+            for detection rules,
+            <a href="https://pages.nist.gov/OSCAL/" rel="noopener" target="_blank">OSCAL</a>
+            and <a href="https://d3fend.mitre.org" rel="noopener" target="_blank">D3FEND</a>
+            for controls, and
+            <a href="https://schema.ocsf.io" rel="noopener" target="_blank">OCSF</a>
+            for the shape of data on the wire. The missing layer — curation,
+            cross-standard mapping, and an open metrics catalogue — is what
+            the commons contributes back.
           </p>
         </article>
         <article class="pillar">
           <div class="pillar-num">02</div>
-          <h3>Durable workflows</h3>
+          <h3>Bring your own orchestrator</h3>
           <p>
-            Security operations are composed as
-            <a href="https://langchain-ai.github.io/langgraph/" rel="noopener" target="_blank">LangGraph</a>
-            state machines with strict
-            <a href="https://docs.pydantic.dev" rel="noopener" target="_blank">Pydantic v2</a>
-            contracts at every boundary. LLM-facing reasoning lives in
-            <a href="https://dspy.ai" rel="noopener" target="_blank">DSPy</a>
-            modules — prompts as versioned code, reviewable and replayable.
+            The canonical content compiles into the runtime each operator
+            already has. Three launch compile targets:
+            <a href="https://n8n.io" rel="noopener" target="_blank">n8n</a>,
+            <a href="https://temporal.io" rel="noopener" target="_blank">Temporal</a>,
+            and <a href="https://langchain-ai.github.io/langgraph/" rel="noopener" target="_blank">LangGraph</a>.
+            Community-contributed adapters are welcome for MindStudio, Make,
+            Zapier, StackAI, CrewAI, and anything else operators bring to
+            the commons. The commons does not ship a runtime of its own.
           </p>
         </article>
         <article class="pillar">
           <div class="pillar-num">03</div>
-          <h3>Auditable in the open</h3>
+          <h3>Sovereign by default</h3>
           <p>
-            Every step in every workflow is plain Python you can read.
-            <a href="https://opentelemetry.io" rel="noopener" target="_blank">OpenTelemetry</a>
-            spans capture each node and tool call; an in-band audit trail
-            survives even when the collector is offline. Sovereignty without
-            transparency is just a different cage.
+            Reference deployments target European-resident, European-governed
+            infrastructure. The content is written to be coherent with the
+            European regulatory baseline — NIS2, DORA, CRA — without binding
+            to any single vendor's interpretation. AI providers are pluggable
+            and pinned by the operator; the commons takes no position on
+            which model you choose, only that you can choose.
           </p>
         </article>
       </div>

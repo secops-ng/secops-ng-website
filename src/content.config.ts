@@ -1,9 +1,10 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 // Blog collection — the printing press of the collective.
-// Posts live under src/content/blog/*.md(x). None yet.
+// Posts live under src/content/blog/*.md(x).
 const blog = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),

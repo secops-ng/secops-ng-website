@@ -38,11 +38,12 @@ Two PRs against `secops-ng-framework`, both merged forward-public:
   — ROADMAP cleanup. The F-CR-01, F-CR-02, F-CR-03, and F-CR-05 feature
   rows are marked **Removed**. F-CR-04 is reshaped to compiler-emitted
   OpenTelemetry scope (the OTel signal lives in what the emitter writes,
-  not in a runtime the project ships); the F-CR-04 reshape lands on a
-  separate review (PR #179). The four removed rows defined a runtime
-  layer the project stopped shipping when PR #34 retired the runtime
-  in favour of the content-first architecture; the feature definitions
-  no longer fit the codebase and now read as such on the ROADMAP.
+  not in a runtime the project ships); the F-CR-04 acceptance-criteria
+  reshape landed on PR #179 the same day this wave closed. The four
+  removed rows defined a runtime layer the project stopped shipping
+  when PR #34 retired the runtime in favour of the content-first
+  architecture; the feature definitions no longer fit the codebase
+  and now read as such on the ROADMAP.
 
 Together these two merges sit on the same architectural beat from
 opposite ends — the forward beat is the substrate that lets the
@@ -98,8 +99,9 @@ actually ships. F-CR-04 is the one row of the four that survives
 in a reshaped form — the telemetry intent reshapes into
 compiler-emitted OpenTelemetry scope, where the compiler writes
 OTel-compatible spans into the artefact the operator's runtime
-executes. That reshape sits on its own review (PR #179) and is
-not closed by this wave.
+executes. The acceptance-criteria reshape landed on PR #179 the
+same day this wave closed; the SKELETON implementation that emits
+the OTel scope from the compilers is the next beat.
 
 ## What this wave does not promise
 
@@ -108,9 +110,10 @@ The substrate landing is one of the gates on the flip; the
 forward-public audit pass across the whole repo is a separate
 checkpoint and stays outstanding.
 
-It does not promise F-CR-04 is closed. The compiler-emitted OTel
-scope is still in review on PR #179 and the ROADMAP row will move
-when that lands.
+It does not promise F-CR-04 is shipped. PR #179 reshaped the
+F-CR-04 acceptance criteria onto compiler-emitted OpenTelemetry
+scope; the SKELETON implementation that emits OTel-compatible spans
+into the compiled artefact stays outstanding on a separate review.
 
 It does not promise the control-map triangle moved or that the
 worked-example axis gained a row. The regulatory axis carries the
@@ -124,9 +127,10 @@ rows note #21 extended it to. Neither moved on this wave.
   ([PR #177](https://github.com/secops-ng/secops-ng-framework/pull/177))
   and the ROADMAP cleanup
   ([PR #178](https://github.com/secops-ng/secops-ng-framework/pull/178)).
-  The reshape of F-CR-04 into compiler-emitted OTel scope is on
-  [PR #179](https://github.com/secops-ng/secops-ng-framework/pull/179),
-  still in review.
+  The reshape of F-CR-04 acceptance criteria onto compiler-emitted
+  OTel scope landed on
+  [PR #179](https://github.com/secops-ng/secops-ng-framework/pull/179);
+  the SKELETON implementation that emits the OTel scope is the next beat.
 - [`secops-ng-website`](https://github.com/secops-ng/secops-ng-website)
   — this note and the twenty-one that preceded it.
 - [`github.com/secops-ng`](https://github.com/secops-ng) — the issues,
@@ -140,4 +144,4 @@ project has carried since the content-first refactor: framework-
 agnostic, no runtime, content + structure + metrics + compilers.
 
 More from the lanes as the substrate audit closes and the F-CR-04
-reshape lands.
+SKELETON implementation lands.

@@ -1,6 +1,6 @@
 ---
-title: "Field note #31 — F-WF-03 alert-triage CORE-WIRE wave clears its response-action stretch with p1 / p2 / p3 wired across n8n, Temporal, and LangGraph (fifteen of twenty-four CORE cells green)"
-description: "Thirty-first field note from the SecOps-NG Digital Commons: the F-WF-03 alert-triage CORE-WIRE wave moves from the midpoint to fifteen of twenty-four CORE cells across n8n, Temporal, and LangGraph — the p1-severe, p2-high, and p3-routine response action bodies are now wired against sibling primitives on the shared package (escalation_route, notify_on_call, route_to_review_queue), with one response wire (p4) and the tests-happy / tests-suppress / tests-replay beats plus the cookbook walkthrough and the GDPR data-flow note still standing ahead of the F-WF-03 closeout."
+title: "Field note #31 — F-WF-03 alert-triage CORE-WIRE wave clears its response-action stretch with p1 / p2 / p3 wired across n8n, Temporal, and LangGraph (twenty-one of twenty-four CORE cells green)"
+description: "Thirty-first field note from the SecOps-NG Digital Commons: the F-WF-03 alert-triage CORE-WIRE wave moves from the midpoint to twenty-one of twenty-four CORE cells across n8n, Temporal, and LangGraph — the p1-severe, p2-high, and p3-routine response action bodies are now wired against sibling primitives on the shared package (escalation_route, notify_on_call, route_to_review_queue), with one response wire (p4) and the tests-happy / tests-suppress / tests-replay beats plus the cookbook walkthrough and the GDPR data-flow note still standing ahead of the F-WF-03 closeout."
 pubDate: 2026-06-05
 author: "The SecOps-NG commons"
 tags: ["shipping-update", "f-wf-03", "alert-triage", "core-wire", "response-actions", "primitives", "compilers", "temporal", "langgraph", "n8n", "digital-commons"]
@@ -150,7 +150,7 @@ remains the entry point against five good-first-issues on
 and
 [#197](https://github.com/secops-ng/secops-ng-framework/issues/197).
 A contributor walking in today finds the same five issues open, an
-alert-triage CORE-WIRE matrix at fifteen of twenty-four cells green
+alert-triage CORE-WIRE matrix at twenty-one of twenty-four cells green
 against the shared primitives package, an n8n alert-triage README at
 OTel + AuditTrail mirror parity with vuln-intake, and one response
 wire plus the tests / cookbook / data-flow beats open as the
@@ -174,7 +174,7 @@ substrate the next moves walk.
   the auto-generated roadmap.
 
 Walk the framework repo today and the F-WF-03 alert-triage CORE
-matrix reads fifteen of twenty-four cells green against the shared
+matrix reads twenty-one of twenty-four cells green against the shared
 primitives package on n8n, Temporal, and LangGraph; the p1-severe,
 p2-high, and p3-routine response actions all read off sibling
 primitives on the same `alert_triage.primitives.response` module on

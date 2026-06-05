@@ -18,7 +18,7 @@ stretch of the CORE-WIRE wave has opened and three of its four cells
 have crossed. The p1-severe, p2-high, and p3-routine response action
 bodies are now wired against sibling primitives on the shared
 `alert_triage.primitives.response` module on every reference target.
-Fifteen of twenty-four CORE cells now read green on the matrix the gap
+Twenty-one of twenty-four CORE cells now read green on the matrix the gap
 inventory walks against.
 
 ## What this note reads off `main`
@@ -86,7 +86,7 @@ ladder.
 
 Seven of eight CORE action bodies on the alert-triage playbook are
 now bound against the shared primitives package on every reference
-target. Fifteen of twenty-four CORE cells read green on the matrix
+target. Twenty-one of twenty-four CORE cells read green on the matrix
 the gap inventory walks against: ingest, enrich (suppress seen-key),
 classify-and-prioritise, suppress-and-close, response-p1, response-p2,
 and response-p3 — seven bound bodies across n8n, Temporal, and

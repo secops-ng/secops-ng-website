@@ -110,12 +110,12 @@ the continuous-posture read. The
 row, read column by column:
 
 - **(a) risk analysis and information system security policies** —
-  F-WF-01 risk-management is Shipped on the event side, and
+  F-WF-02 posture-audit is Shipped on the event side, and
   **F-WF-06 infrastructure-posture flips to Shipped in this window**
   on the continuous side. The same control family now reads on both
   cadences.
-- **(b) incident handling** — F-WF-02 incident-management Shipped,
-  with the F-CP-04 incident-evidence stream against it.
+- **(b) incident handling** — F-WF-05 incident-management Shipped,
+  with the F-CP-02 incidents stream against it.
 - **(c) business continuity and crisis management** — read by the
   cookbook's continuity artifacts on the risk-management side.
 - **(e) security in network and information systems acquisition,

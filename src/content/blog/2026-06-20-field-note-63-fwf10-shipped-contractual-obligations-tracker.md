@@ -45,8 +45,8 @@ Four pieces sit against the contract-time row:
   `regenerate.sh`.
 - **An obligation-evidence schema** at
   `schemas/evidence/contractual-obligations.schema.json` pinning the
-  top-level envelopes — `contract_id`, `supplier_ref`,
-  `obligations[]`, `review_schedule`, `attestation_window` — as
+  top-level envelopes — `contract`, `obligations[]`,
+  `review_schedule[]`, `owner`, `provenance` — as
   Draft 2020-12 JSON Schema. Each obligation enumerates clause-anchor,
   obligation-class (security-control commitment, audit-right window,
   attestation cadence, sub-processor-disclosure clause,
@@ -81,8 +81,9 @@ Each binds three pieces in its window:
   `compilers/_shared/evidence/contractual_obligations.py` — a pure
   `render_contractual_obligations(ctx)` returning a record plus an
   `emit_contractual_obligations(ctx, output_dir)` writing it
-  atomically to disk. `derive_artifact_id(contract_id, supplier_ref,
-  emitted_at)` is SHA-256-deterministic per the schema contract; the
+  atomically to disk. `derive_artifact_id(workflow_id, execution_id,
+  contract_id, captured_at)` is SHA-256-deterministic per the schema
+  contract (`SHA-256(<workflow_id>|<execution_id>|<contract.contract_id>|<captured_at>)`); the
   same supplier-contract inputs always produce the same artifact id,
   replay-stable across runs and across targets.
 - **A thin per-target adapter** delegating to the shared emitter: a
@@ -96,18 +97,20 @@ Each binds three pieces in its window:
 - **A worked example** at
   `examples/{n8n,temporal,langgraph}/contractual_obligations_tracker/`,
   each carrying a `regenerate.py` that emits the obligation-evidence
-  artifact for one representative supplier contract. The n8n and
-  LangGraph regenerators re-import the Temporal sibling's `CONTEXTS`
-  dict, so the three targets exercise byte-identical input by
-  construction. The committed output is three `.obligations.json`
-  files — one per reference target — all byte-identical.
+  artifact for one representative supplier contract. The LangGraph
+  regenerator re-imports the Temporal sibling's typed `CTX`; the n8n
+  regenerator carries a JSON-native `PAYLOAD` declared inline whose
+  field-by-field values match the Temporal `CTX`. The three targets
+  exercise byte-identical input by construction at the payload level;
+  cross-target byte parity at the artifact level is pinned by the
+  goldens. The committed output is three `.obligations.json` files —
+  one per reference target — all byte-identical.
 
-Byte-parity golden tests at
-`tests/examples/contractual_obligations_tracker/test_golden.py` pin
-the result: cross-target byte parity for the canonical contract,
-per-target adapter parity, schema-conformant emit, NIS2 Article
-21(2)(d) vocabulary coverage, `artifact_id` determinism, and the
-per-obligation review-schedule invariant. The failure messages name
+Per-target byte-parity goldens at
+`tests/examples/contractual_obligations_tracker/test_{n8n,temporal,langgraph}_workflow_golden.py`
+and `test_{n8n,temporal,langgraph}_obligation_evidence.py` pin both
+the per-target workflow artefact and the per-target obligation-evidence
+record. The failure messages name
 which target drifted, so a refactor of the shared emitter that
 silently changes serialisation gets caught at the byte level, not at
 downstream review.
@@ -203,8 +206,8 @@ of the three reference compile targets can now:
   Temporal, and LangGraph; goldens pin it. Switching reference target
   leaves the filed shape unchanged.
 - **Get a deterministic artifact id.** `derive_artifact_id` is
-  SHA-256-deterministic over `(contract_id, supplier_ref,
-  emitted_at)`, so re-emitting the same artifact from the same inputs
+  SHA-256-deterministic over `(workflow_id, execution_id,
+  contract_id, captured_at)`, so re-emitting the same artifact from the same inputs
   returns the same id — useful for downstream evidence composition
   and for the auditor-bundle row.
 - **Compose into the auditor bundle.** The obligation-evidence

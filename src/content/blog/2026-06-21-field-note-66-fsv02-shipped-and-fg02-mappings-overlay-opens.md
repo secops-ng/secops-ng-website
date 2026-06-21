@@ -1,6 +1,6 @@
 ---
-title: "Field note #66 — F-SV-02 eIDAS 2.0 wallet integration pattern flips to Shipped with three-target parity closed, and F-G02 outbound cross-standard mappings overlay lane opens"
-description: "Sixty-sixth field note from the SecOps-NG Digital Commons: F-SV-02 eIDAS 2.0 wallet integration pattern lands its LangGraph CORE-FANOUT, closing three-target parity across n8n, Temporal, and LangGraph for a Pydantic-typed EU Digital Identity Wallet attestation input, and flips ROADMAP Proposed→Shipped on the sovereignty lane; F-G02 outbound cross-standard mappings overlay lane opens with SKELETON mappings.yaml overlays on the vuln_intake, identity_compromise, and ransomware_containment playbooks cross-linking OSCAL / D3FEND / OCSF plus NIS2 / DORA / CRA / GDPR — incident_management overlay still ahead, so the row is opening, not complete."
+title: "Field note #66 — F-SV-02 eIDAS 2.0 wallet integration pattern flips to Shipped with three-target parity closed, and F-G02 outbound cross-standard mappings overlay lane opens with the incident-family quartet complete on this pass"
+description: "Sixty-sixth field note from the SecOps-NG Digital Commons: F-SV-02 eIDAS 2.0 wallet integration pattern lands its LangGraph CORE-FANOUT, closing three-target parity across n8n, Temporal, and LangGraph for a Pydantic-typed EU Digital Identity Wallet attestation input, and flips ROADMAP Proposed→Shipped on the sovereignty lane; F-G02 outbound cross-standard mappings overlay lane opens with SKELETON mappings.yaml overlays on the vuln_intake, identity_compromise, ransomware_containment, and incident_management playbooks — the incident-family quartet complete on this pass — cross-linking OSCAL / D3FEND / OCSF plus NIS2 / DORA / CRA / GDPR; the lane is opening, not complete, with the EXTEND surface and the F-WF / F-SV row fan-out still ahead."
 pubDate: 2026-06-21
 author: "The SecOps-NG commons"
 tags: ["shipping-update", "f-sv-02", "f-g02", "eidas2", "eudiw", "sovereignty", "mappings", "oscal", "d3fend", "ocsf", "nis2", "dora", "cra", "gdpr", "digital-commons", "three-target", "byte-parity", "n8n", "temporal", "langgraph"]
@@ -31,13 +31,17 @@ Two rows moved in this window:
   input across all three.
 - **F-G02 outbound cross-standard mappings overlay** opens on
   the catalogue lane: SKELETON mappings.yaml outbound overlays
-  on the vuln_intake, identity_compromise, and
-  ransomware_containment playbooks, each cross-linking the
-  playbook into OSCAL controls, D3FEND techniques, OCSF event
-  shapes, and the EU regulatory surfaces (NIS2 Article 21,
-  DORA Articles 17–23, CRA essential requirements, GDPR
-  Article 33). The incident_management overlay is still
-  ahead — the row is opening on the lane, not complete.
+  on the vuln_intake, identity_compromise,
+  ransomware_containment, and incident_management playbooks —
+  the incident-family quartet complete on this pass — each
+  cross-linking the playbook into OSCAL controls, D3FEND
+  techniques, OCSF event shapes, and the EU regulatory
+  surfaces (NIS2 Article 21, DORA Articles 17–23, CRA
+  essential requirements, GDPR Article 33). The row is opening
+  on the lane, not complete — the EXTEND-level operator-facing
+  surface on each of the four SKELETONs, and the fan-out
+  across the rest of the Shipped F-WF and F-SV catalogue, are
+  still ahead.
 
 ## What landed on F-SV-02
 
@@ -135,9 +139,10 @@ named and structured; the EXTEND-level operator-facing surface
 (rationale per mapping, evidence-artifact pointer, residual-risk
 KRI binding) follows on later passes for each row.
 
-### F-G02 SKELETON overlays — vuln_intake, identity_compromise, ransomware_containment
+### F-G02 SKELETON overlays — vuln_intake, identity_compromise, ransomware_containment, incident_management
 
-Three SKELETON overlays land in this window:
+Four SKELETON overlays land in this window, completing the
+incident-family quartet on this pass:
 
 - **vuln_intake** through
   [PR #382](https://github.com/secops-ng/secops-ng-framework/pull/382)
@@ -164,24 +169,40 @@ Three SKELETON overlays land in this window:
   surfaces (NIS2 Article 21 incident-handling and
   business-continuity, DORA significant-incident reporting,
   CRA, GDPR Article 33).
+- **incident_management** through
+  [PR #385](https://github.com/secops-ng/secops-ng-framework/pull/385)
+  — outbound mappings.yaml overlay cross-linking the
+  incident_management playbook to its OSCAL controls, D3FEND
+  techniques, OCSF event shapes, and the EU regulatory
+  surfaces (NIS2 Article 23 significant-incident notification
+  obligations, DORA major-incident reporting, CRA essential
+  requirements on incident handling, GDPR Article 33).
 
-Three of an expanding set; the lane is opening with the
-incident-family front-of-funnel and a foundational
-vulnerability-intake row.
+The incident-family front-of-funnel is complete on this
+SKELETON pass — vuln_intake, identity_compromise,
+ransomware_containment, and incident_management each carry an
+outbound mappings overlay. The lane is opening on the
+catalogue with this quartet; the EXTEND surface and the
+fan-out across the rest of the Shipped catalogue are still
+ahead.
 
 ### F-G02 status — opening, not complete
 
-F-G02 reads on the ROADMAP as **Proposed** with three of
-several incident-family playbooks carrying a SKELETON outbound
-mappings overlay. The `incident_management` overlay is still
-ahead on this row, and additional playbook rows
-(phishing-triage, data-exfil, post-incident review, on-call
-rotation, and the F-WF/F-SV family Shipped in prior waves) will
-each receive their own outbound mappings overlay on subsequent
-passes. Until those land and the operator-facing rationale +
-evidence-artifact + KRI EXTEND surface follows, this field note
-frames F-G02 as **opening on the catalogue lane — not
-complete**.
+F-G02 reads on the ROADMAP as **Proposed** with the
+incident-family quartet (vuln_intake, identity_compromise,
+ransomware_containment, incident_management) each carrying a
+SKELETON outbound mappings overlay. The EXTEND pass on each of
+the four SKELETON rows is still ahead — per-mapping rationale,
+the evidence-artifact pointer the playbook emits as discharge
+of each control, and the residual-risk KRI catalogue binding
+each row carries. Additional playbook rows (phishing-triage,
+data-exfil, post-incident review, on-call rotation, and the
+F-WF/F-SV family Shipped in prior waves) will each receive
+their own outbound mappings overlay on subsequent passes.
+Until the EXTEND surface lands on each of the four SKELETONs
+and the fan-out reaches the rest of the Shipped catalogue,
+this field note frames F-G02 as **opening on the catalogue
+lane — not complete**.
 
 ## Where these two rows sit
 
@@ -224,8 +245,8 @@ compile targets can today:
 
 A regulated operator (or an auditor or regulator) reading the
 catalogue for cross-standard alignment on the vuln_intake,
-identity_compromise, or ransomware_containment playbooks can
-today:
+identity_compromise, ransomware_containment, or
+incident_management playbooks can today:
 
 - **Look up the cross-standard surface a playbook discharges
   through a typed overlay.** Each playbook now carries a
@@ -238,10 +259,6 @@ today:
 
 ## What's open behind this wave
 
-- **F-G02 incident_management overlay.** The incident_management
-  playbook is the missing front-of-funnel sibling on this
-  SKELETON pass; the row will not flip beyond opening until
-  that overlay lands.
 - **F-G02 wave across the F-WF and F-SV Shipped rows.** Each
   Shipped workflow row carries an opening for an outbound
   mappings overlay; the lane will fan out over subsequent
@@ -271,8 +288,10 @@ today:
   ([PR #382](https://github.com/secops-ng/secops-ng-framework/pull/382)),
   identity_compromise
   ([PR #383](https://github.com/secops-ng/secops-ng-framework/pull/383)),
-  and ransomware_containment
+  ransomware_containment
   ([PR #384](https://github.com/secops-ng/secops-ng-framework/pull/384)),
+  and incident_management
+  ([PR #385](https://github.com/secops-ng/secops-ng-framework/pull/385)),
   all merged.
 - [`secops-ng-website`](https://github.com/secops-ng/secops-ng-website)
   — this note and the sixty-five that preceded it.
@@ -286,13 +305,14 @@ Shipped, giving an EU-native identity primitive — the EU
 Digital Identity Wallet attestation — a single typed,
 framework-agnostic entry point across n8n, Temporal, and
 LangGraph; and the outbound cross-standard mappings overlay
-lane opened with SKELETON overlays on three incident-family
-playbooks, cross-linking the catalogue against OSCAL, D3FEND,
+lane opened with SKELETON overlays on the incident-family
+quartet of playbooks (vuln_intake, identity_compromise,
+ransomware_containment, incident_management), cross-linking the catalogue against OSCAL, D3FEND,
 OCSF, NIS2, DORA, CRA, and GDPR as a typed audit-readable
 surface. The catalogue now reads one more Shipped row on the
 sovereignty lane and an opening lane on the catalogue itself.
 The next field notes will read whatever lands behind this
-wave — the F-G02 incident_management overlay, the F-G02 fan-out
+wave — the F-G02 fan-out
 across the rest of the Shipped catalogue, the F-G02 EXTEND
 surface on each row, and the next workflow or sovereignty-lane
 row to arrive content-first.

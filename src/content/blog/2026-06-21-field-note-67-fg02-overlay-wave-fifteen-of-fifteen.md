@@ -1,6 +1,6 @@
 ---
-title: "Field note #67 — F-G02 outbound cross-standard mappings overlay wave lands ten further SKELETONs, the catalogue now reads fourteen of fifteen playbooks carrying an outbound mappings.yaml, with onboarding_offboarding_tracker the single open row before the wave closes out"
-description: "Sixty-seventh field note from the SecOps-NG Digital Commons: the F-G02 outbound cross-standard mappings overlay lane lands ten further SKELETON overlays across phishing_triage, data_exfil, cloud_misconfiguration, post_incident_review, codebase_vuln_management, iam_auditor, on_call_rotation, detection_engineering, infra_posture_management, and contractual_obligations_tracker; the catalogue now reads fourteen of fifteen workflow rows each carrying a mappings.yaml outbound overlay cross-linking OSCAL controls, D3FEND techniques, OCSF event classes, and the EU regulatory surfaces (NIS2 / DORA / CRA / GDPR); onboarding_offboarding_tracker is the single open row before the wave closes out and the lane flips from opening to complete on this SKELETON pass."
+title: "Field note #67 — F-G02 outbound cross-standard mappings overlay wave closes out: the catalogue now reads fifteen of fifteen workflow playbooks each carrying an outbound mappings.yaml, the SKELETON pass on the lane is complete"
+description: "Sixty-seventh field note from the SecOps-NG Digital Commons: the F-G02 outbound cross-standard mappings overlay lane lands eleven further SKELETON overlays across phishing_triage, data_exfil, cloud_misconfiguration, post_incident_review, codebase_vuln_management, iam_auditor, on_call_rotation, onboarding_offboarding_tracker, detection_engineering, infra_posture_management, and contractual_obligations_tracker; the catalogue now reads fifteen of fifteen workflow rows each carrying a mappings.yaml outbound overlay cross-linking OSCAL controls, D3FEND techniques, OCSF event classes, and the EU regulatory surfaces (NIS2 / DORA / CRA / GDPR); the SKELETON pass on the lane closes out on this wave and the next pass opens on the EXTEND surface and the sovereignty-lane fan-out."
 pubDate: 2026-06-21
 author: "The SecOps-NG commons"
 tags: ["shipping-update", "f-g02", "mappings", "oscal", "d3fend", "ocsf", "nis2", "dora", "cra", "gdpr", "digital-commons", "catalogue", "audit-readable", "community-contributions"]
@@ -11,14 +11,13 @@ mappings overlay lane opening on the catalogue with SKELETON
 overlays on the incident-family quartet of playbooks
 (vuln_intake, identity_compromise, ransomware_containment,
 incident_management). This note reads the wave behind that
-opening: ten further SKELETON overlays merged to framework
+opening: eleven further SKELETON overlays merged to framework
 `main` in this window, taking the catalogue from four of fifteen
-playbooks to fourteen of fifteen each carrying a `mappings.yaml`
-outbound overlay. One row remains open
-(onboarding_offboarding_tracker) before the SKELETON pass on
-the lane closes out.
+playbooks to fifteen of fifteen each carrying a `mappings.yaml`
+outbound overlay. The SKELETON pass on the lane closes out on
+this wave.
 
-Ten rows moved in this window, all on the F-G02 lane:
+Eleven rows moved in this window, all on the F-G02 lane:
 
 - **phishing_triage** SKELETON outbound mappings overlay
 - **data_exfil** SKELETON outbound mappings overlay
@@ -27,6 +26,7 @@ Ten rows moved in this window, all on the F-G02 lane:
 - **codebase_vuln_management** SKELETON outbound mappings overlay
 - **iam_auditor** SKELETON outbound mappings overlay
 - **on_call_rotation** SKELETON outbound mappings overlay
+- **onboarding_offboarding_tracker** SKELETON outbound mappings overlay
 - **detection_engineering** SKELETON outbound mappings overlay
 - **infra_posture_management** SKELETON outbound mappings overlay
 - **contractual_obligations_tracker** SKELETON outbound mappings overlay
@@ -93,7 +93,7 @@ chain — the overlay's narrative names it directly, and the
 inbound `content/mappings/dora/article-19-and-28.yaml`
 asserts the carve-out at the graph level.
 
-## What landed on each of the ten rows
+## What landed on each of the eleven rows
 
 ### Incident-adjacent and triage-front
 
@@ -135,11 +135,11 @@ surface:
   incident-classification handoffs, and the inbound
   graph for the review artifact.
 
-### Vulnerability, identity, and operational-posture rows
+### Vulnerability, identity, on-call, and operational-posture rows
 
-The next three overlays cover the rows that surfaced through
-the vulnerability, identity-audit, and on-call-rotation
-playbooks:
+The next four overlays cover the rows that surfaced through
+the vulnerability, identity-audit, on-call-rotation, and
+joiner/leaver tracker playbooks:
 
 - **codebase_vuln_management** through
   [PR #390](https://github.com/secops-ng/secops-ng-framework/pull/390)
@@ -164,6 +164,15 @@ playbooks:
   on-call-rotation playbook exercises against NIS2 Article
   21(2)(b) incident-handling obligations and the inbound
   operational-readiness graph.
+- **onboarding_offboarding_tracker** through
+  [PR #396](https://github.com/secops-ng/secops-ng-framework/pull/396)
+  — outbound mappings.yaml overlay naming the OSCAL controls,
+  D3FEND techniques, and OCSF event classes the
+  joiner/mover/leaver-tracking playbook exercises against NIS2
+  Article 21(2)(i) access-control and identity-lifecycle
+  obligations and the inbound capability-inventory graph; this
+  is the row whose landing closes the SKELETON pass on the
+  lane to fifteen of fifteen.
 
 ### Detection, posture, and contractual rows
 
@@ -205,13 +214,11 @@ mappings surface that reads the catalogue against OSCAL,
 D3FEND, OCSF, and the EU regulatory surfaces as a structured,
 audit-readable lookup.
 
-At the close of this wave the catalogue reads **fourteen of
+At the close of this wave the catalogue reads **fifteen of
 fifteen** workflow rows each carrying a `mappings.yaml`
-outbound overlay. The remaining row is
-`onboarding_offboarding_tracker`. On the prior wave the lane
-read **four of fifteen**; on this wave it reads **fourteen of
-fifteen**. The SKELETON pass on the lane closes out when the
-final row lands.
+outbound overlay. On the prior wave the lane read **four of
+fifteen**; on this wave it reads **fifteen of fifteen**. The
+SKELETON pass on the lane closes out on this wave.
 
 ## What this wave reads about the contribution funnel
 
@@ -243,7 +250,7 @@ following directly from the overlay:
   entry names every playbook that asserts the clause on its
   outbound overlay, and any explicit sub-threshold carve-outs
   read as named exclusions rather than silent omissions.
-- **Across the catalogue at the structural level.** Fourteen of
+- **Across the catalogue at the structural level.** Fifteen of
   fifteen workflow rows now carry the same typed surface, so a
   downstream consumer (a SSP, a SIEM data model, an
   audit-readiness review) can iterate the catalogue and read
@@ -261,10 +268,6 @@ them at the identifier level.
 
 ## What's open behind this wave
 
-- **F-G02 SKELETON closeout — onboarding_offboarding_tracker.**
-  The fifteenth row in the workflow catalogue. The wave closes
-  out when this row carries its outbound mappings overlay and
-  the lane reads fifteen of fifteen.
 - **F-G02 EXTEND — rationale, evidence-pointer, KRI binding.**
   The SKELETON overlay structures the cross-links; the EXTEND
   pass on each row will name per-mapping rationale, point at
@@ -273,13 +276,13 @@ them at the identifier level.
 - **F-G02 fan-out to the sovereignty-lane rows.** F-SV-02
   (eIDAS 2.0 wallet) and F-SV-03 (DORA Article 19 report
   variant) are Shipped on their own lanes; each will carry an
-  outbound mappings overlay on a subsequent pass once the
-  workflow-catalogue SKELETON pass closes.
+  outbound mappings overlay on a subsequent pass now that the
+  workflow-catalogue SKELETON pass is closed.
 
 ## Where the work is
 
 - [`secops-ng-framework`](https://github.com/secops-ng/secops-ng-framework)
-  — the ten SKELETON outbound mappings overlays in this wave:
+  — the eleven SKELETON outbound mappings overlays in this wave:
   phishing_triage
   ([PR #386](https://github.com/secops-ng/secops-ng-framework/pull/386)),
   data_exfil
@@ -298,8 +301,10 @@ them at the identifier level.
   ([PR #393](https://github.com/secops-ng/secops-ng-framework/pull/393)),
   infra_posture_management
   ([PR #394](https://github.com/secops-ng/secops-ng-framework/pull/394)),
-  and contractual_obligations_tracker
+  contractual_obligations_tracker
   ([PR #395](https://github.com/secops-ng/secops-ng-framework/pull/395)),
+  and onboarding_offboarding_tracker
+  ([PR #396](https://github.com/secops-ng/secops-ng-framework/pull/396)),
   all merged to `main`.
 - [`secops-ng-website`](https://github.com/secops-ng/secops-ng-website)
   — this note and the sixty-six that preceded it.
@@ -307,18 +312,18 @@ them at the identifier level.
   issues, the good-first-issues open against the community
   lane, the auto-generated roadmap.
 
-Ten rows moved in this window, all on a single lane. The
+Eleven rows moved in this window, all on a single lane. The
 F-G02 outbound cross-standard mappings overlay lane carried
 phishing_triage, data_exfil, cloud_misconfiguration,
 post_incident_review, codebase_vuln_management, iam_auditor,
-on_call_rotation, detection_engineering,
-infra_posture_management, and contractual_obligations_tracker
-each into a typed `mappings.yaml` overlay cross-linking OSCAL,
-D3FEND, OCSF, and the EU regulatory surfaces (NIS2, DORA, CRA,
-GDPR). The catalogue moved from four of fifteen workflow rows
-carrying an outbound overlay to fourteen of fifteen.
-`onboarding_offboarding_tracker` is the single open row on the
-SKELETON pass; once it lands, the lane reads fifteen of
-fifteen and the SKELETON pass closes out, and the EXTEND
-surface on each row — per-mapping rationale, evidence-pointer,
-KRI binding — opens as the next pass.
+on_call_rotation, onboarding_offboarding_tracker,
+detection_engineering, infra_posture_management, and
+contractual_obligations_tracker each into a typed
+`mappings.yaml` overlay cross-linking OSCAL, D3FEND, OCSF, and
+the EU regulatory surfaces (NIS2, DORA, CRA, GDPR). The
+catalogue moved from four of fifteen workflow rows carrying an
+outbound overlay to fifteen of fifteen. The SKELETON pass on
+the lane closes out on this wave, and the EXTEND surface on
+each row — per-mapping rationale, evidence-pointer, KRI
+binding — opens as the next pass, alongside the F-G02 fan-out
+to the sovereignty-lane rows F-SV-02 and F-SV-03.

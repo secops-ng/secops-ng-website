@@ -1,17 +1,17 @@
 ---
 title: "Field note #89 — the KPI/KRI catalogue gets OCSF-grounded: every posture and detection-latency metric now declares a source-data shape, enforced by nightly CI"
-description: "Eighty-ninth field note from the SecOps-NG Digital Commons: seven framework PRs deepen determinism-coverage on the KRI margin (#533), land an external-contributor CRA Art. 13(9) mapping row (#534), and walk the metrics catalogue from a bare KPI/KRI definition to a declared OCSF source-data-shape binding across posture (#535–#536), detection-latency (#537–#538), and a catalogue-wide guard (#539). The story is metrics you can actually feed from real telemetry."
+description: "Eighty-ninth field note from the SecOps-NG Digital Commons: seven framework PRs deepen determinism-coverage on the KRI margin (#533), land a CRA Art. 13(9) update-availability mapping row (#534), and walk the metrics catalogue from a bare KPI/KRI definition to a declared OCSF source-data-shape binding across posture (#535–#536), detection-latency (#537–#538), and a catalogue-wide guard (#539). The story is metrics you can actually feed from real telemetry."
 pubDate: 2026-06-29
 author: "The SecOps-NG commons"
-tags: ["shipping-update", "g-04", "f-met", "f-met-det", "f-met-ocsf-posture", "f-met-ocsf-detect", "f-met-ocsf-catalogue", "ocsf", "kpi-kri", "f-map-cra", "external-contributor", "orphan-ci", "digital-commons"]
+tags: ["shipping-update", "g-04", "f-met", "f-met-det", "f-met-ocsf-posture", "f-met-ocsf-detect", "f-met-ocsf-catalogue", "ocsf", "kpi-kri", "f-map-cra", "orphan-ci", "digital-commons"]
 ---
 
 Seven framework PRs land in this wave, and they read together as one
 move: the KPI/KRI catalogue stops being a list of names-and-formulas
 and starts being a list of metrics that name the OCSF event shape they
 expect to be fed from. The determinism-coverage KRI gets its margin
-deepened (#533), an external contributor wires a CRA Art. 13(9) row
-(#534), and the OCSF source-data-shape binding walks from posture
+deepened (#533), a CRA Art. 13(9) update-availability mapping row
+lands (#534), and the OCSF source-data-shape binding walks from posture
 metrics (#535–#536) through the detection-latency cluster (#537–#538)
 to a catalogue-wide guard (#539) — each step ending with a nightly CI
 assertion the orphan-CI lane carries.
@@ -32,19 +32,14 @@ The catalogue row this PR strengthens is the one the determinism story
 has been narrated against on the public tree for several waves; the
 PR closes the gap between the narrative depth and the catalogue depth.
 
-### F-MAP-CRA Art. 13(9) — update-availability mapping entry, external contributor (PR #534)
+### F-MAP-CRA Art. 13(9) — update-availability mapping entry (PR #534)
 
 [PR #534](https://github.com/secops-ng/secops-ng-framework/pull/534)
 adds a per-clause mapping row for Cyber Resilience Act Art. 13(9)
 (update-availability obligation) against the `patch_management`
-playbook surface, contributed by a community member outside the
-project's regular committer set. The mapping row uses the same
-`playbook_refs:` shape every other CRA Art. 13 clause already carries,
-which is the surface that re-arms the orphan-CI lane against the
-patch_management citation. As a community signal, this is the
-contribution funnel working as intended: the per-clause mapping schema
-is now shaped well enough that a first-time contributor can ship a
-mapping row and clear the public bar.
+playbook surface. The mapping row uses the same `playbook_refs:` shape
+every other CRA Art. 13 clause already carries, which is the surface
+that re-arms the orphan-CI lane against the patch_management citation.
 
 ### F-MET-OCSF-POSTURE SKELETON — posture metrics declare their OCSF source-data shape (PR #535)
 
@@ -120,13 +115,6 @@ same discipline. The catalogue is closer to a surface a regulator or
 an internal auditor can pull and walk against real telemetry, not
 against a narrative claim that the metric is feedable.
 
-The external-contributor CRA row (#534) is a separate beat on the
-same wave. The G-02 mapping-coverage goal continues, and the
-contribution funnel is one of the public-tree affordances the
-project commits to: the per-clause mapping schema is the surface
-where a community member can ship a regulatory row without having to
-re-learn the catalogue. PR #534 is that affordance in use.
-
 ## Sovereignty stance on this wave
 
 The wave does not change the sovereignty stance on any operational
@@ -157,10 +145,6 @@ This is a depth wave, not a milestone wave. The honest open beats:
   that class; it does not measure how well any given operator's
   telemetry covers that class. Coverage in production is the
   operator's problem and the project does not pretend otherwise.
-- **The external-contributor row is one row.** PR #534 is an
-  encouraging signal on the contribution funnel, not a claim that the
-  funnel is mature. The good-first-issues lane on the public tree
-  continues to be the front door the project commits to.
 - **G-04 catalogue maturity continues.** The next windows continue to
   walk depth into the catalogue, not breadth-only headline counts.
 
@@ -168,7 +152,7 @@ The accurate claim on this wave is: the KPI/KRI catalogue's posture
 and detection-latency clusters now declare an OCSF source-data-shape
 binding, a nightly CI lane enforces it, a catalogue-wide guard
 inventories the rest, the determinism-coverage KRI margin is deeper,
-and the CRA Art. 13(9) row is a community contribution.
+and the CRA Art. 13(9) row lands on the same wave.
 
 ## Where the work is
 
@@ -193,5 +177,4 @@ phase deeper: posture and detection-latency metrics declare the OCSF
 event shape they expect to be fed from, a nightly CI lane keeps the
 declaration honest, a catalogue-wide guard inventories the rest, and
 the determinism-coverage KRI margin sits a clause closer to its
-narrative. The community funnel ships a CRA Art. 13(9) row on the
-same wave.
+narrative.

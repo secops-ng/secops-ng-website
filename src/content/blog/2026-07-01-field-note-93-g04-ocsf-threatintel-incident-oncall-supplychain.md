@@ -1,28 +1,28 @@
 ---
-title: "Field note #93 — the per-cluster OCSF binding lint sweeps across four more KPI/KRI clusters (threat-intel & phishing SKELETON+CORE, incident-response SKELETON+CORE, on-call-rotation SKELETON+CORE, supply-chain-security SKELETON)"
-description: "Ninety-third field note from the SecOps-NG Digital Commons: seven framework PRs widen the G-04 per-cluster OCSF source-data-shape binding lint across four more KPI/KRI clusters. Threat-intel & phishing ships SKELETON + CORE (#553, #554), incident-response ships SKELETON + CORE (#555, #556), on-call-rotation ships SKELETON + CORE (#557, #558), and supply-chain-security opens at SKELETON (#559). Three new clusters ride the nightly orphan-CI cadence; supply-chain lands as a zero-classified baseline until real bindings arm it."
+title: "Field note #93 — the per-cluster OCSF binding lint sweeps across four more KPI/KRI clusters (threat-intel & phishing SKELETON+CORE, incident-response SKELETON+CORE, on-call-rotation SKELETON+CORE, supply-chain-security SKELETON+CORE)"
+description: "Ninety-third field note from the SecOps-NG Digital Commons: eight framework PRs widen the G-04 per-cluster OCSF source-data-shape binding lint across four more KPI/KRI clusters. Threat-intel & phishing ships SKELETON + CORE (#553, #554), incident-response ships SKELETON + CORE (#555, #556), on-call-rotation ships SKELETON + CORE (#557, #558), and supply-chain-security ships SKELETON + CORE (#559, #560). Four new clusters ride the nightly orphan-CI cadence; supply-chain arms at a zero-classified baseline until real bindings land."
 pubDate: 2026-07-01
 author: "The SecOps-NG commons"
 tags: ["shipping-update", "g-04", "f-met", "f-met-ocsf-threatintel", "f-met-ocsf-incident", "f-met-ocsf-oncall", "f-met-ocsf-supplychain", "ocsf", "threat-intel", "phishing", "incident-response", "on-call-rotation", "supply-chain-security", "cra", "kpi-kri", "orphan-ci", "digital-commons"]
 ---
 
-Seven framework PRs close this window, and they continue the G-04
+Eight framework PRs close this window, and they continue the G-04
 catalogue-maturity theme along a single dimension: coverage breadth on
 the per-cluster OCSF source-data-shape binding lint. Last window
 ([#92](https://github.com/secops-ng/secops-ng-website)) closed
 regulatory-notification to CORE and opened identity-&-access and
 vulnerability-&-patch (CRA-family) on the same SKELETON → CORE
-pattern. This window lands three more clusters at CORE —
-threat-intel & phishing, incident-response, and on-call-rotation —
-and opens supply-chain-security at SKELETON. Ten KPI/KRI clusters now
-have both a per-cluster linter module and, for nine of them, a
-nightly orphan-CI job wired against it, sibling to the posture,
+pattern. This window lands four more clusters at CORE —
+threat-intel & phishing, incident-response, on-call-rotation, and
+supply-chain-security — each on its own SKELETON → CORE pair. Ten
+KPI/KRI clusters now have both a per-cluster linter module and a
+nightly orphan-CI job wired against each, sibling to the posture,
 detection-latency, catalogue-wide, sovereignty, determinism, and
 post-incident-review lanes already in flight.
 
 ## What landed
 
-Seven PRs against the framework, all merged to `main`.
+Eight PRs against the framework, all merged to `main`.
 
 ### F-MET-OCSF-THREATINTEL SKELETON — per-cluster OCSF binding lint for the threat-intel & phishing cluster (PR #553)
 
@@ -143,7 +143,7 @@ today:
 - `kpi.span_block_emitter_determinism_rate@v1` — same three-playbook fan-out
 
 All five have `telemetry_refs: []`. Arming the lint against real
-bindings and wiring the nightly lane are both CORE work.
+bindings is CORE follow-on work; the nightly wire-in is #560.
 
 The SKELETON therefore ships a zero-classified baseline: the
 shipped-tree assertion passes trivially, and a **baseline anchor
@@ -156,6 +156,23 @@ bound. Synthetic fixtures still arm the lint end-to-end:
 exclusive-membership `telemetry_refs: []` trips it, an OCSF-bound
 synthetic metric passes, and the fan-out shapes are kept out by the
 exclusivity gate.
+
+### F-MET-OCSF-SUPPLYCHAIN CORE — supply-chain-security OCSF binding rides nightly orphan-CI (PR #560)
+
+[PR #560](https://github.com/secops-ng/secops-ng-framework/pull/560)
+closes the CORE step by wiring the supply-chain-security SKELETON
+module as a new `supply-chain-security-ocsf-bindings` job stanza in
+`.github/workflows/orphan-ci.yml`, sibling to the existing per-cluster
+jobs, with matching extensions to the `pull_request` and `push`
+path-trigger lists. Scope is CI wiring only — no new content, no new
+linter logic, no change to the zero-classified baseline anchor. The
+lane lands green on `main`, so the supply-chain-security cluster now
+arms at zero findings on the shipped catalogue on the same nightly
+cadence as its siblings. The zero-classified baseline anchor still
+applies: until an exclusive-membership supply-chain metric lands and
+updates the baseline in the same PR, the lane is honestly green
+because nothing classifies, not because every classified metric is
+bound.
 
 ## Why this reads against G-04
 
@@ -185,16 +202,16 @@ The coverage breadth after this window:
   `ransomware_containment`, `ddos_response`, `data_exfil`.
 - **On-call-rotation** — CORE this window (#557 + #558).
   Single-playbook classifier on `on_call_rotation`.
-- **Supply-chain-security (CRA Art. 13 family)** — SKELETON this window
-  (#559). Single-playbook classifier on `supply_chain_security`, held
-  at a zero-classified baseline anchor until real bindings arm the
-  cluster.
+- **Supply-chain-security (CRA Art. 13 family)** — CORE this window
+  (#559 + #560). Single-playbook classifier on
+  `supply_chain_security`, held at a zero-classified baseline anchor
+  until real bindings arm the cluster.
 
-Ten KPI/KRI clusters now have per-cluster linter modules, and nine of
-them enforce their OCSF source-data-shape binding nightly on sibling
-orphan-CI lanes. Each of the nine arms at zero findings on the shipped
-catalogue and follows the same SKELETON → CORE pattern that the rest
-of the sweep uses.
+Ten KPI/KRI clusters now have per-cluster linter modules and enforce
+their OCSF source-data-shape binding nightly on sibling orphan-CI
+lanes. Nine arm at zero findings on the shipped catalogue via real
+bindings; supply-chain arms at a zero-classified baseline anchor
+until an exclusive-membership supply-chain metric lands.
 
 ## Sovereignty stance on this wave
 
@@ -219,12 +236,17 @@ compile target they choose (n8n, Temporal, or LangGraph).
 This is a coverage-breadth wave, not a milestone wave. The honest
 open beats:
 
-- **F-MET-OCSF-SUPPLYCHAIN CORE has not merged yet.** The CI wire-in
-  and the real-binding work for the five unbound orphan metrics are
-  the CORE follow-on; the SKELETON's zero-classified baseline anchor
-  is a deliberate placeholder that will need to be updated in the
-  same PR that lands the first exclusive-membership supply-chain
-  metric.
+- **Supply-chain-security is armed but not yet bound.** The nightly
+  lane is green on the shipped catalogue because nothing classifies
+  as exclusive-membership supply-chain today — the five unbound
+  orphan metrics that reference `playbook.supply_chain_security@v1`
+  all fan out across pipeline / executive-catch-all playbooks and are
+  correctly kept out of the cluster by the exclusivity gate. The
+  zero-classified baseline anchor test on `main` is a deliberate
+  placeholder that will need to be updated in the same PR that lands
+  the first exclusive-membership supply-chain metric with a real
+  OCSF binding. Until then, the lane's green state is honest about
+  what it is measuring.
 - **The two classifier gates — playbook-scoped and step-scoped — still
   live as siblings, not consolidated.** Consolidating them into a
   single lint surface remains a governance decision for a follow-on
@@ -252,10 +274,11 @@ binding lint now covers ten KPI/KRI clusters — posture,
 detection-latency, catalogue-wide, post-incident-review,
 regulatory-notification, identity-&-access, vulnerability-&-patch
 (CRA-family), threat-intel & phishing, incident-response,
-on-call-rotation, and supply-chain-security — with nine enforced
-nightly on their own sibling job stanza in `orphan-ci.yml` and
-supply-chain held honestly at a zero-classified baseline anchor until
-its real bindings arm.
+on-call-rotation, and supply-chain-security — with all ten enforced
+nightly on their own sibling job stanza in `orphan-ci.yml`. Nine arm
+at zero findings on the shipped catalogue via real bindings, and
+supply-chain arms at a zero-classified baseline anchor until real
+bindings land.
 
 ## Where the work is
 
@@ -267,7 +290,8 @@ its real bindings arm.
   [PR #556](https://github.com/secops-ng/secops-ng-framework/pull/556),
   [PR #557](https://github.com/secops-ng/secops-ng-framework/pull/557),
   [PR #558](https://github.com/secops-ng/secops-ng-framework/pull/558),
-  and [PR #559](https://github.com/secops-ng/secops-ng-framework/pull/559).
+  [PR #559](https://github.com/secops-ng/secops-ng-framework/pull/559),
+  and [PR #560](https://github.com/secops-ng/secops-ng-framework/pull/560).
   All merged to `main`.
 - [`secops-ng-website`](https://github.com/secops-ng/secops-ng-website)
   — this note and the ninety-two that preceded it.
@@ -275,10 +299,10 @@ its real bindings arm.
   the good-first-issues open against the community lane, the
   auto-generated roadmap.
 
-Seven PRs close this window. Threat-intel & phishing,
-incident-response, and on-call-rotation each land SKELETON + CORE;
-supply-chain-security opens at SKELETON with a honest zero-classified
-baseline anchor. Nine KPI/KRI clusters now enforce their OCSF
-source-data-shape binding nightly on sibling orphan-CI lanes, all
-arming at zero findings on the shipped catalogue, and the tenth is
-inventoried and gated until its real bindings arm.
+Eight PRs close this window. Threat-intel & phishing,
+incident-response, on-call-rotation, and supply-chain-security each
+land SKELETON + CORE. Ten KPI/KRI clusters now enforce their OCSF
+source-data-shape binding nightly on sibling orphan-CI lanes; nine
+arm at zero findings on the shipped catalogue via real bindings, and
+supply-chain arms at a zero-classified baseline anchor until its real
+bindings land.

@@ -26,8 +26,8 @@ carries, on `main`:
 - **Twenty-nine CACAO v2 playbooks.** Alert triage, detection
   engineering, vulnerability intake, incident management, phishing
   triage, ransomware containment, data exfiltration response, identity
-  compromise, MFA-secured communications, IAM auditor, JML lifecycle,
-  cryptographic posture, backup and recovery, patch management,
+  compromise, MFA-secured communications, IAM auditor, asset
+  management, cryptographic posture, backup and recovery, patch management,
   infrastructure posture, cloud misconfiguration, supply-chain
   security, threat intelligence ingestion, DDoS response,
   post-incident review, on-call rotation, cyber hygiene training,
@@ -42,9 +42,11 @@ carries, on `main`:
   GDPR.** Every shipped playbook carries a `mappings.yaml` alongside
   it that declares OSCAL control anchors, MITRE D3FEND references,
   OCSF class bindings, and the EU regulatory clause it evidences.
-  Twenty-seven inbound clause files on the NIS2 side, thirteen on
-  the DORA side, twenty-three across CRA Article 13 / Article 14 /
-  Annex I, and the GDPR Article 32 / Article 33 / Article 34
+  Twelve clause files carrying fifteen mapped entries on the NIS2 side,
+  eighteen clause files carrying twenty-five mapped entries on
+  the DORA side, twenty-one clause files carrying forty-two mapped
+  entries across CRA Article 13, Article 14, and Annex I, and the
+  GDPR Article 32 / Article 33 / Article 34
   evidence set — all resolved bidirectionally against the playbook
   catalogue, all queryable programmatically, all in one file per
   playbook that the operator or the auditor can read without a

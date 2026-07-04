@@ -96,7 +96,7 @@ claim that has been argued in field notes since the F-WF wave
 began — that a playbook can ship as a portable artifact and fan
 out into three runtimes without losing determinism at the
 evidence layer. `schemas/evidence/dpia.schema.json` is the
-contract. The goldens under `content/playbooks/data_protection_impact_assessment/goldens/`
+contract. The goldens under `tests/examples/data_protection_impact_assessment/`
 are the check: for a fixed input, the n8n emitter, the Temporal
 emitter, and the LangGraph emitter produce byte-identical
 evidence objects. CI fails the moment they diverge.
@@ -180,7 +180,7 @@ Two directions open from today:
   and D3FEND overlays.
 - `secops-ng-framework/schemas/evidence/dpia.schema.json` — the
   evidence schema the three compilers emit against.
-- `secops-ng-framework/content/playbooks/data_protection_impact_assessment/goldens/`
+- `secops-ng-framework/tests/examples/data_protection_impact_assessment/`
   — the byte-parity goldens the CI check enforces across n8n,
   Temporal, and LangGraph.
 - `secops-ng-framework/docs/cookbook/data_protection_impact_assessment.md`

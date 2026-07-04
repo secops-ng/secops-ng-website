@@ -145,7 +145,7 @@ directions are open to contribution from today:
   generalises, contribute it back. The contributor guide covers
   the shape both paths take.
 
-The authoring guide at `docs/contributing/authoring-playbooks.md`
+The authoring guide at `docs/contributing/playbook-authoring.md`
 in the framework repository is the entry point for either
 direction.
 
@@ -156,7 +156,7 @@ direction.
   D3FEND overlays.
 - `secops-ng-framework/content/mappings/gdpr/` — the Art. 15–22
   inbound mapping, machine-readable from either side.
-- `secops-ng-framework/docs/contributing/authoring-playbooks.md`
+- `secops-ng-framework/docs/contributing/playbook-authoring.md`
   — the contributor guide for additional article coverage and
   operator-specific extensions.
 - Field note #105 — the earlier GDPR mapping wave (Art. 25 and

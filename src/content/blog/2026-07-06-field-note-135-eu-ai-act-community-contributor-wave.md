@@ -40,8 +40,9 @@ The scope of a single contribution wave, end to end:
 
 The regulatory ring for the EU AI Act playbook, after the
 wave, reads: NIS2 ok, GDPR ok, EU AI Act own OSCAL
-component ok, DORA closed with an audited skip rationale,
-CRA in its grace window. That closes the G-02 ring for the
+component ok, DORA and CRA closed with audited "no
+documented interaction" skip rationales. That closes the
+G-02 ring for the
 new playbook end to end — content, compilers, cookbook, and
 the traceability layer that ties every step to the
 regulation text that motivates it.
@@ -114,18 +115,22 @@ welcome.
 ## Where to look
 
 - **Framework repo:**
-  - `content/playbooks/eu-ai-act/art9-risk-management.yaml`
-    — the EU AI Act Article 9 CACAO v2 playbook.
+  - `content/playbooks/eu_ai_act_risk_management/` — the
+    EU AI Act Article 9 CACAO v2 playbook (with
+    `mappings.yaml` and the compile-target workflow files).
   - `compilers/n8n/`, `compilers/temporal/`,
     `compilers/langgraph/` — the three reference compiler
     targets.
-  - `docs/cookbook/eu-ai-act-art9-walkthrough.md` — the
+  - `docs/cookbook/eu_ai_act_risk_management.md` — the
     cookbook walkthrough.
-  - `content/mappings/eu-ai-act/` — the inbound
-    regulatory-edge files (NIS2 Art.21(2)(a), GDPR Art.35,
-    EU AI Act own OSCAL component definition).
-  - `content/mappings/skip-manifests/eu-ai-act/` — the
-    audited skip closures for DORA and CRA.
+  - `content/mappings/eu_ai_act/` — the inbound
+    regulatory-edge files (Art.9 / Art.11 / Art.13 / Art.72,
+    Art.6 classification + Annex III use cases) and the
+    EU AI Act OSCAL component definition.
+  - `content/mappings/dora/_orphan_skip.yaml` and
+    `content/mappings/cra/_orphan_skip.yaml` — the audited
+    "no documented interaction" skip closures keyed by
+    `slug: eu_ai_act_risk_management`.
   - `docs/contributing/playbook-authoring.md` — the mapping
     and playbook authoring guide.
 

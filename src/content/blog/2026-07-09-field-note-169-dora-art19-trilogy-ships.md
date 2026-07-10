@@ -145,7 +145,7 @@ cross-regime siblings named at the mapping layer.
 The playbook stands alongside the NIS2 Article 20
 governance ring shipped earlier this week and the
 security-awareness training ring covered in
-[field note #167](/blog/2026-07-09-field-note-167-security-awareness-training/):
+[field note #167](/blog/2026-07-09-field-note-167-secawareness-extend-cookbook/):
 three EU regulatory obligations, three portable
 artifacts, one durable commons.
 

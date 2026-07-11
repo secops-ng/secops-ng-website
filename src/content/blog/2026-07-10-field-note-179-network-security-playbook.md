@@ -1,12 +1,12 @@
 ---
-title: "Field note #170 — network_security CACAO v2 playbook ships: NIS2 Article 21(2)(e) coverage lands on main with three-target compiler fan-out"
-description: "Field note one hundred and seventy from the SecOps-NG Digital Commons. The network_security CACAO v2 playbook ships in the framework today — a five-step topology (inventory_network_segments → evaluate_segmentation_policy → detect_policy_violations → enforce_remediation → generate_posture_evidence_artifact) bound to OSCAL SC-7/SC-3, OCSF Network Activity, and D3FEND D3-NTA, compiling identically to n8n, Temporal, and LangGraph — closing one of the top-5 NIS2 Article 21 control families with no prior dedicated CACAO entry in the framework."
+title: "Field note #179 — network_security CACAO v2 playbook ships: NIS2 Article 21(2)(e) coverage lands on main with three-target compiler fan-out"
+description: "Field note one hundred and seventy-nine from the SecOps-NG Digital Commons. The network_security CACAO v2 playbook ships in the framework today — a five-step topology (inventory_network_segments → evaluate_segmentation_policy → detect_policy_violations → enforce_remediation → generate_posture_evidence_artifact) bound to OSCAL SC-7/SC-3, OCSF Network Activity, and D3FEND D3-NTA, compiling identically to n8n, Temporal, and LangGraph — closing one of the top-5 NIS2 Article 21 control families with no prior dedicated CACAO entry in the framework."
 pubDate: 2026-07-10
 author: "The SecOps-NG commons"
-tags: ["field-note", "g-01", "g-02", "playbook", "nis2", "nis2-art-21", "network-security", "cacao", "oscal", "ocsf", "d3fend", "three-target", "digital-commons", "field-note-170"]
+tags: ["field-note", "g-01", "g-02", "playbook", "nis2", "nis2-art-21", "network-security", "cacao", "oscal", "ocsf", "d3fend", "three-target", "digital-commons", "field-note-179"]
 ---
 
-Field note one hundred and seventy. The
+Field note one hundred and seventy-nine. The
 network_security CACAO v2 playbook lands on main
 in the framework today. Two framework pull
 requests carry the ship: the SKELETON pull
@@ -25,7 +25,7 @@ Network security was one of the top-five NIS2
 Article 21 control families the framework had
 been carrying without a dedicated CACAO entry.
 Neighbouring families — nis2_art20_governance
-(field notes #164, #166, #170-era ring-close,
+(field notes #164, #166, #170,
 #176), incident_handling, business_continuity,
 security_awareness_training (field note #175) —
 each anchor their own Article 21 obligation with

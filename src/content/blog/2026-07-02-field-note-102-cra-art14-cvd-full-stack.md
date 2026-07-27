@@ -191,8 +191,7 @@ outbound integrations:
 All three are stubs in the deliberate CACAO sense — the shape of the
 adapter is declared, the interaction points are pinned, the case
 ledger writes the correct events. The runnable emitters against
-n8n / Temporal / LangGraph land in the follow-on
-[t_14561b34](https://github.com/secops-ng/secops-ng-framework) CORE-PRIM
+n8n / Temporal / LangGraph land in the follow-on CORE-PRIM
 card (see the honest framing section below on G-03).
 
 ### F-WF-CRA-CVD CORE-C — D3-IRA + IR-6/SI-2 + Article 14 §6 KPI wiring (PR #595)

@@ -1,0 +1,90 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+// One page per field note. The index at /blog links every entry as
+// `/blog/${post.id}`, and until this route existed those links resolved to
+// nothing: the build emitted `dist/blog/index.html` and no post pages, so
+// all 190 notes were unreachable while the build stayed green.
+//
+// `params.id` must be named to match the `[...id]` filename, and the value
+// is `post.id` verbatim so it agrees with the href the index already emits.
+export const getStaticPaths = (async () => {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const published = post.data.pubDate.toLocaleDateString('en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+<Base title={`${post.data.title} — SecOps-NG`} description={post.data.description}>
+  <section class="page">
+    <div class="container narrow">
+      <span class="eyebrow">Field note</span>
+      <h1>{post.data.title}</h1>
+
+      <p class="post-meta">
+        <time datetime={post.data.pubDate.toISOString()}>{published}</time>
+        {' · '}{post.data.author}
+      </p>
+
+      {post.data.tags.length > 0 && (
+        <ul class="tag-list">
+          {post.data.tags.map((tag) => <li class="tag">{tag}</li>)}
+        </ul>
+      )}
+
+      <article class="post-body">
+        <Content />
+      </article>
+
+      <p class="post-back"><a href="/blog">← All field notes</a></p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .post-meta { color: var(--muted); margin: 0.5rem 0 0; }
+
+  .tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .tag {
+    font-size: 0.8rem;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+  }
+
+  .post-body { margin-top: 2.5rem; }
+  .post-body :global(h2) { margin-top: 2.5rem; }
+  .post-body :global(h3) { margin-top: 2rem; }
+  .post-body :global(pre) {
+    overflow-x: auto;
+    padding: 1rem;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+  }
+  .post-body :global(table) { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
+  .post-body :global(th),
+  .post-body :global(td) { border: 1px solid var(--rule); padding: 0.4rem 0.6rem; text-align: left; }
+  .post-body :global(img) { max-width: 100%; height: auto; }
+
+  .post-back { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+</style>

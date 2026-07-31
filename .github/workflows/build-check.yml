@@ -1,0 +1,47 @@
+name: Build check
+
+# Pull requests had no build lane. `deploy-pages.yml` builds only on push to
+# main — that is, after merge — so a change could break the site and nothing
+# would say so until it was already live. That gap is how the missing blog
+# post route shipped: `astro build` exited 0, the index rendered, and all 190
+# field notes 404'd.
+#
+# This lane runs the same build a PR would eventually get, plus the
+# post-build route check.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-check:
+    name: build + blog route check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build site
+        run: pnpm build
+
+      - name: Check blog routes resolve
+        run: pnpm run check:routes

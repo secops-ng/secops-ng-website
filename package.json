@@ -13,6 +13,6 @@
     "check:routes": "node scripts/check-blog-routes.mjs"
   },
   "dependencies": {
-    "astro": "^7.1.6"
+    "astro": "^7.2.8"
   }
 }

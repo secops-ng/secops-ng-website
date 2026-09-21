@@ -52,7 +52,7 @@ sovereignty as a public good, framework-agnostic by default.
 
 If that's the kind of room you want to be in, the door is open:
 
-[**discord.gg/zWXGwFZc**](https://discord.gg/zWXGwFZc)
+[**discord.gg/BKP72spe25**](https://discord.gg/BKP72spe25)
 
 The field-note cadence resumes from here. See you on the other side
 of the invite.

@@ -143,7 +143,7 @@ contributions on top of the substrate the shipping wave finishes.
 The community-ignition entry point — "Open for contributors" —
 remains live against the good-first-issues on
 `secops-ng-framework`, and the free practitioner Discord
-([discord.gg/secops-ng](https://discord.gg/secops-ng)) remains the
+([discord.gg/BKP72spe25](https://discord.gg/BKP72spe25)) remains the
 contributor chat. A contributor walking in today finds three
 reference workflows reading end to end against three reference
 compile targets, the same EXTEND-tests parity bar under CI on every

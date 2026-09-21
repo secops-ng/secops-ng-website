@@ -11,7 +11,7 @@ export const MASTODON_HANDLE = '@secops_ng@mastodon.social';
 
 // The community Discord invite. Rotate it here when the link changes; the
 // header, footer, landing page and community page all read this value.
-export const DISCORD_INVITE = 'https://discord.gg/zWXGwFZc';
+export const DISCORD_INVITE = 'https://discord.gg/BKP72spe25';
 
 // Default social-preview image (1280x640), served from public/og/.
 export const OG_IMAGE = '/og/secops-ng.png';

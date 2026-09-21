@@ -150,7 +150,7 @@ streams open.
 The community-ignition entry point — "Open for contributors" —
 remains live against the good-first-issues on
 `secops-ng-framework`, and the free practitioner Discord
-([discord.gg/secops-ng](https://discord.gg/secops-ng)) remains the
+([discord.gg/BKP72spe25](https://discord.gg/BKP72spe25)) remains the
 contributor chat. A contributor walking in today finds the launch-window
 workflow set with two complete worked examples, F-WF-05 incident
 management at SKELETON parity, and the first evidence stream open

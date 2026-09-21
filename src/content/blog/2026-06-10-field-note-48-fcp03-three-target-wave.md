@@ -265,7 +265,7 @@ EXTEND beats close.
 
 The good-first-issues lane on the framework repo remains open
 against the catalogue, and the free practitioner Discord
-([discord.gg/secops-ng](https://discord.gg/secops-ng)) remains the
+([discord.gg/BKP72spe25](https://discord.gg/BKP72spe25)) remains the
 contributor chat. A reader walking the framework repo today finds
 three continuous-posture lanes reading **Shipped** end-to-end with
 NIS2 ties at clause granularity on three distinct clauses, a fourth

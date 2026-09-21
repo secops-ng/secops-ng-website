@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "description": "Public website for Project SecOps-NG \u2014 a collective for sovereign EU security.",
+  "description": "Public website for SecOps-NG, a Digital Commons for sovereign security operations.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,6 +13,8 @@
     "check:routes": "node scripts/check-blog-routes.mjs"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
     "astro": "^7.2.8"
   }
 }

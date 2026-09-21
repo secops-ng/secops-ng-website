@@ -1,13 +1,34 @@
 ---
+import {
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  GITHUB_ORG,
+  DISCORD_INVITE,
+  MASTODON_URL,
+  MASTODON_HANDLE,
+  OG_IMAGE,
+} from '../consts';
+
 export interface Props {
   title?: string;
   description?: string;
+  /** Path or URL of the social-preview image; defaults to the site card. */
+  image?: string;
+  /** Open Graph type: 'website' for pages, 'article' for posts. */
+  type?: 'website' | 'article';
 }
 
 const {
-  title = 'SecOps-NG — A Digital Commons for sovereign security operations',
-  description = 'A community-driven initiative building durable, auditable security workflows on European sovereign infrastructure.',
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  image = OG_IMAGE,
+  type = 'website',
 } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const imageUrl = new URL(image, Astro.site);
+const feedUrl = new URL('/rss.xml', Astro.site);
 ---
 <!doctype html>
 <html lang="en">
@@ -17,6 +38,24 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} — field notes`} href={feedUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="fediverse:creator" content={MASTODON_HANDLE} />
   </head>
   <body>
     <header class="site-header">
@@ -51,9 +90,13 @@ const {
           Code licensed <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener" target="_blank">Apache-2.0</a>.
         </p>
         <p class="footer-links">
-          <a href="https://github.com/secops-ng" rel="noopener" target="_blank">github.com/secops-ng</a>
+          <a href={GITHUB_ORG} rel="noopener" target="_blank">github.com/secops-ng</a>
           <span class="footer-sep" aria-hidden="true">·</span>
-          <a href="https://discord.gg/zWXGwFZc" rel="noopener" target="_blank">Discord — join the community</a>
+          <a href={DISCORD_INVITE} rel="noopener" target="_blank">Discord — join the community</a>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <a href={MASTODON_URL} rel="me noopener" target="_blank">Mastodon</a>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <a href="/rss.xml">RSS</a>
         </p>
       </div>
     </footer>

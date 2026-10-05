@@ -132,7 +132,7 @@ the same shape the two shipped workflows already established.
 The community-ignition entry point — "Open for contributors" —
 remains live against five good-first-issues on
 `secops-ng-framework`, and the free practitioner Discord
-([discord.gg/secops-ng](https://discord.gg/secops-ng)) remains the
+([discord.gg/BKP72spe25](https://discord.gg/BKP72spe25)) remains the
 contributor chat. A contributor walking in today finds the same
 five issues open, two complete worked examples reading end to end
 against three reference targets (F-WF-01 vuln intake, F-WF-03

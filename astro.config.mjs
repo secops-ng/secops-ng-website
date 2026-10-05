@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 // Project SecOps-NG public website.
 // Deployment target: GitHub Pages with custom domain (secops-ng.com).
@@ -8,4 +9,6 @@ export default defineConfig({
   site: 'https://secops-ng.com',
   base: '/',
   trailingSlash: 'ignore',
+  // Emits sitemap-index.xml + sitemap-0.xml; robots.txt points at it.
+  integrations: [sitemap()],
 });

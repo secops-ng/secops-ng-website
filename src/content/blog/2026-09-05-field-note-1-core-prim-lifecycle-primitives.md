@@ -1,6 +1,9 @@
 ---
 title: "CORE-PRIM lifecycle primitives for unbound execution steps"
-date: 2026-09-05
+description: "Seven capability areas gain step-level lifecycle primitives in CORE-PRIM, so operators can compile deterministic orchestrations with complete execution paths instead of unbound steps."
+pubDate: 2026-09-05
+author: "The SecOps-NG commons"
+tags: ["field-note", "core-prim", "playbooks", "compilers", "d3fend", "ocsf", "digital-commons"]
 ---
 
 We have added CORE-PRIM lifecycle primitives for unbound execution steps across seven critical capability areas:

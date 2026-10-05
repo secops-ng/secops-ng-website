@@ -169,7 +169,7 @@ their turn against the same checklist.
 The community-ignition entry point — "Open for contributors" —
 remains live against the good-first-issues on `secops-ng-framework`,
 and the free practitioner Discord
-([discord.gg/secops-ng](https://discord.gg/secops-ng)) remains the
+([discord.gg/BKP72spe25](https://discord.gg/BKP72spe25)) remains the
 contributor chat. A contributor walking in today finds the
 launch-window workflow set — F-WF-01 vulnerability triage, F-WF-03
 alert triage, F-WF-05 incident management — all reading **Shipped**

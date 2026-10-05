@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { DISCORD_INVITE } from '../consts';
 ---
 <Base title="Community — SecOps-NG" description="How participation in the SecOps-NG Digital Commons works.">
   <section class="page">
@@ -74,7 +75,7 @@ import Base from '../layouts/Base.astro';
         the work is welcome to join.
       </p>
       <p>
-        <a href="https://discord.gg/zWXGwFZc" rel="noopener" target="_blank">discord.gg/zWXGwFZc</a>
+        <a href={DISCORD_INVITE} rel="noopener" target="_blank">{DISCORD_INVITE.replace('https://', '')}</a>
       </p>
 
       <h2>What does not belong in the commons</h2>
@@ -91,7 +92,7 @@ import Base from '../layouts/Base.astro';
 
       <div class="cta-row">
         <a class="btn btn-primary" href="https://github.com/secops-ng" rel="noopener" target="_blank">Open the commons on GitHub</a>
-        <a class="btn" href="https://discord.gg/zWXGwFZc" rel="noopener" target="_blank">Join the Discord</a>
+        <a class="btn" href={DISCORD_INVITE} rel="noopener" target="_blank">Join the Discord</a>
         <a class="btn" href="/about">About the commons</a>
       </div>
     </div>

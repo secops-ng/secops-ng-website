@@ -168,7 +168,7 @@ shipping wave finishes.
 The community-ignition entry point — "Open for contributors" —
 remains live against five good-first-issues on
 `secops-ng-framework`. The free practitioner Discord
-([discord.gg/secops-ng](https://discord.gg/secops-ng), announced
+([discord.gg/BKP72spe25](https://discord.gg/BKP72spe25), announced
 in field note #31's sibling launch post) remains the contributor
 chat. A contributor walking in today finds the same five issues
 open, two complete worked examples reading end to end against
